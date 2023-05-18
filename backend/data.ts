@@ -28,7 +28,7 @@ class Messages {
     this.session_id = "";
     this.session_name = "";
     this.created_at = Date.now();
-    this.model = "claude-v1";
+    this.model = "claude-v1-100k";
   }
   // add, update, delete, get messages
   add_message(role: string, content: string) {

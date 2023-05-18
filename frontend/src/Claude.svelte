@@ -13,6 +13,7 @@
       role: "user",
     });
     typing = true;
+    newMessage = "Claude is typing..."
 
     // Send the message to the backend
     const response = await fetch('http://localhost:3000/api/send-message', {
@@ -51,6 +52,7 @@
       if (reply.status == 202) {
         // close connection
         typing = false;
+        newMessage = "";
         source.close();
       }
     });
@@ -59,6 +61,7 @@
       console.log('Error received:', event);
       // close connection
       typing = false;
+      newMessage = "";
       source.close();
     });
   }

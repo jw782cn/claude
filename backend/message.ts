@@ -24,7 +24,7 @@ class AnthropicMessage extends EventEmitter {
       {
         prompt: `${HUMAN_PROMPT} ${prompt}${AI_PROMPT}`,
         stop_sequences: [HUMAN_PROMPT],
-        max_tokens_to_sample: 200,
+        max_tokens_to_sample: 10000,
         model: model,
       },
       {
