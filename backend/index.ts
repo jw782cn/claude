@@ -1,11 +1,19 @@
 import express, { Request, Response } from 'express';
 import { AnthropicMessage } from './message';
 import cors from 'cors';
+import {
+  Message,
+  Session,
+  File,
+  messageHandler,
+  sessionHandler,
+  fileHandler,
+} from "./data";
 
 const app = express();
 const port = 3000;
 
-let anthropicMessage: AnthropicMessage | null = null;
+let anthropicMessage = new AnthropicMessage();
 
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
@@ -21,10 +29,17 @@ app.listen(3001, function () {
 });
 
 app.post('/api/send-message', (req: Request, res: Response) => {
-  anthropicMessage = new AnthropicMessage();
-  anthropicMessage.send(req.body.message);
-  // Send a simple response back. The message processing has started
+  if (req.body.role === "file") {
+    anthropicMessage.send(req.body.message, req.body.role, req.body.filename);
+  } else {
+    anthropicMessage.send(req.body.message);
+  }
   res.json({ status: 'processing started' });
+});
+
+app.get('/api/get-current-messages', async (req: Request, res: Response) => {
+  const messages = await sessionHandler.findMessages();
+  res.json(messages);
 });
 
 app.get('/api/stream-updates', (req: Request, res: Response) => {
@@ -49,6 +64,21 @@ app.get('/api/stream-updates', (req: Request, res: Response) => {
   anthropicMessage.on('error', (data: { result: string, status: number}) => {
     res.write(`event: error\ndata: ${JSON.stringify(data)}\n\n`);
   });
+});
+
+app.get('/api/get-session-names', async (req: Request, res: Response) => {
+  const data = await sessionHandler.findAll()
+  // {id: name}
+  res.json(data);
+});
+
+app.get('/api/get-current-session-id', async (req: Request, res: Response) => {
+  res.json({ currentSessionId: sessionHandler.currentSessionId });
+});
+
+app.get('/api/get-current-model', async (req: Request, res: Response) => {
+  const model = await sessionHandler.findModel();
+  res.json({ currentModel: model});
 });
 
 
