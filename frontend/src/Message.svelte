@@ -47,7 +47,7 @@
     border-radius: 16px;
     max-width: 75%;
     word-wrap: break-word;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.4;
     text-align: left;
   }

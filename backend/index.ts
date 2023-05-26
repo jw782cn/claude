@@ -81,6 +81,16 @@ app.get('/api/get-current-model', async (req: Request, res: Response) => {
   res.json({ currentModel: model});
 });
 
+// create a new session
+app.post('/api/create-session', async (req: Request, res: Response) => {
+  const session = new Session(req.body.name, req.body.model);
+  await sessionHandler.insert(session);
+  // console.log("session", session);
+  // change to current session
+  sessionHandler.currentSessionId = session.id;
+  console.log("current session id", sessionHandler.currentSessionId);
+  res.json({ status: 'session created' });
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

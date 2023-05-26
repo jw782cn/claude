@@ -24,6 +24,7 @@
     "@fortawesome/fontawesome-free": "^6.4.0",
     "cross-fetch": "^3.1.5",
     "highlight.js": "^11.8.0",
+    "jspdf": "^2.5.1",
     "marked": "^5.0.2",
     "sirv-cli": "^2.0.0",
     "tslib": "^2.5.0"

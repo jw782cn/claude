@@ -1,7 +1,8 @@
-<script lang="ts">
+<script>
   import { onMount, afterUpdate } from "svelte";
   import { fade } from "svelte/transition";
   import Message from "./Message.svelte";
+  import jsPDF from 'jspdf';
 
   // Store for chat messages
   let messages = [];
@@ -10,7 +11,6 @@
   let sessionNamesandIds = {};
   let currentSessionId = "";
   let uploadfile;
-  let uploaddir;
   let URL = "http://localhost:3000";
 
   let messagesContainer;
@@ -164,6 +164,32 @@
     
   }
 
+  function generatepdf() {
+    const doc = new jsPDF();
+    let lineHeight = 10;
+    let pageHeight = doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
+    let margin = 40;
+
+    doc.setFontSize(10); // Set the font size.
+
+    messages.forEach((item, index) => {
+      let content = `${item.role}: ${item.content}\n\n`;
+      let lines = doc.splitTextToSize(content, 180); // 180 => max width
+
+      lines.forEach(line => {
+        if (lineHeight > pageHeight - margin) {
+          doc.addPage();
+          lineHeight = 10; // Restart height on new page.
+        }
+
+        doc.text(line, 10, lineHeight);
+        lineHeight += 7; // 7 => line height spacing
+      });
+    });
+
+    doc.save('document.pdf');
+  }
+
 
   const scrollToBottom = async (node) => {
     node.scroll({ top: node.scrollHeight, behavior: "smooth" });
@@ -203,9 +229,8 @@
         Upload
         <input type="file" bind:this={uploadfile} class="input-file" on:change={handleFileUpload} />
       </button>
-      <button class="button"  on:click={() => uploaddir.click()} disabled={typing} >
-        FileDir
-        <input type="file" bind:this={uploaddir} class="input-file" on:change={handleDirUpload} />
+      <button class="button"  on:click={() => generatepdf()} disabled={typing} >
+        PDF
       </button>
       <button class="button"  on:click={() => download.click()} disabled={typing} >
         Download
