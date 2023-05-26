@@ -4,22 +4,8 @@
     import { marked } from "marked";
     import hljs from 'highlight.js';
     export let message;
-    // let formattedMessage = message.content.replace(/\n/g, "<br />");
-    marked.setOptions({
-        renderer: new marked.Renderer(),
-        highlight: function(code, language) {
-            const validLanguage = hljs.getLanguage(language) ? language : 'python';
-            return hljs.highlight(validLanguage, code).value;
-        },
-        pedantic: false,
-        gfm: true,
-        breaks: false,
-        sanitize: false,
-        smartLists: true,
-        smartypants: false,
-        xhtml: false
-    });
-    let formattedMessage = marked(message.content);
+    $: formattedMessage = message.content.replace(/\n/g, "<br />");
+    // $: console.log(message);
 </script>
 
 <div class="message {message.role}">

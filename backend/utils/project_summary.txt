@@ -1,0 +1,5955 @@
+Project Directory:
+- chato-service-master
+/gpt3.py
+/requirements.txt
+/Dockerfile
+/forbid_api.py
+/README.md
+/.gitignore
+/pulsar_consumer.py
+/routers/trace.py
+/routers/chato_questions.py
+/routers/domain.py
+/routers/testcase.py
+/routers/embedding.py
+/routers/job.py
+/routers/chato_ws.py
+/routers/__init__.py
+/routers/domain_v2.py
+/routers/document_management.py
+/routers/FileUpload.py
+/routers/stream.py
+/routers/statistics.py
+/routers/chato_public.py
+/routers/Forbid.py
+/routers/third.py
+/routers/chato_v1.py
+/chat/__init__.py
+/util/__init__.py
+/util/baixing_fk.py
+/config/__init__.py
+/config/production_config.py
+/config/local_config.py
+/es_model/tools.py
+/es_model/__init__.py
+/es_model/search.py
+/es_model/data.py
+/ban_word/internal.py
+/ban_word/stream_demo.py
+/ban_word/__init__.py
+/ban_word/start.py
+/ban_word/recognize.py
+/ban_word/openai_stream/async_openai_requests.py
+/ban_word/openai_stream/start_test.py
+/ban_word/openai_stream/__init__.py
+/model/__init__.py
+/model/Bot.py
+/model/QaIntent.py
+/model/chato.py
+/model/Developer.py
+/model/base.py
+/service/__init__.py
+/service/mq.py
+/service/bx_index/BxGPTIndex.py
+/service/bx_index/__init__.py
+/service/bx_index/README.md
+/service/bx_index/ChatGPTLLMPredictor.py
+/service/bx_index/BxIndexResponse.py
+/service/bx_index/es/OpensearchIndexDictForBX.py
+/service/bx_index/es/GPTOpensearchIndexQueryForBX.py
+/service/bx_index/es/BaixingES7VectorClient.py
+/service/bx_index/es/__init__.py
+/service/bx_index/es/GPTOpensearchIndexForBX.py
+/service/bx_index/es/OpensearchVectorStoreForBX.py
+/service/bx_index/es/IndexDict.py
+/service/bx_index/milvus/GPTMilvusIndexQuery.py
+/service/bx_index/milvus/__init__.py
+/service/bx_index/milvus/GPTMilvusIndex.py
+/service/bx_index/milvus/MilvusIndexDict.py
+/service/bx_index/milvus/BaixingMilvusVectorClient.py
+/service/bx_index/milvus/MilvusVectorStore.py
+/service/core/analysis.py
+/service/core/bx_uuid.py
+/service/core/async_utils.py
+/service/core/cos_upload.py
+/service/core/cos.py
+/service/core/temp_file.py
+/service/core/__init__.py
+/service/core/logger.py
+/service/core/builder.py
+/service/core/redis.py
+/service/core/date.py
+/service/proxy/Command.py
+/service/proxy/CommandProxyDebug.py
+/service/proxy/CmdTypeEnum.py
+/service/proxy/__init__.py
+/service/proxy/CommandProxy.py
+/service/proxy/ProxyResponse.py
+/service/proxy/CmdContext.py
+/service/proxy/ProxyApi.py
+/service/proxy/ProxyRequest.py
+/service/cache/SessionCache.py
+/service/cache/QuestionCache.py
+/service/chat/TokenService.py
+/service/chat/ChatService.py
+/service/quality/TencentQuality.py
+/service/quality/BaixingQuality.py
+/service/quality/__init__.py
+/service/entity/ChatParam.py
+/service/entity/QaParam.py
+/service/crawler/WeChatMsgCrawler.py
+/service/crawler/__init__.py
+/service/crawler/BasicCrawler.py
+/service/document_management/QaText.py
+/service/document_management/README.md
+/service/document_management/text.py
+/service/lazy_property/lazy.py
+/service/chat_plugin/type_enum.py
+/service/chat_plugin/__init__.py
+/service/chat_plugin/chat_request.py
+/service/chat_plugin/context.py
+/service/chat_plugin/chat_response.py
+/service/chat_plugin/source_enum.py
+/service/datastore/__init__.py
+/service/datastore/factory.py
+/service/datastore/datastore.py
+/service/datastore/providers/zilliz_datastore.py
+/service/datastore/providers/milvus_intent_datastore.py
+/service/datastore/providers/weaviate_datastore.py
+/service/datastore/providers/milvus2_datastore.py
+/service/datastore/providers/milvus3_datastore.py
+/service/datastore/providers/__init__.py
+/service/datastore/providers/qdrant_datastore.py
+/service/datastore/providers/pinecone_datastore.py
+/service/datastore/providers/milvus_datastore.py
+/service/datastore/models/models.py
+/service/datastore/models/__init__.py
+/service/datastore/models/qa_models.py
+/service/datastore/prompts/prompt.py
+/service/datastore/openai/token.py
+/service/datastore/openai/cladue_openai.py
+/service/datastore/openai/chat.py
+/service/datastore/openai/azure_openai.py
+/service/datastore/openai/main_openai.py
+/service/datastore/openai/messages.py
+/service/datastore/openai/CladueChatOpenAI.py
+/service/datastore/openai/self_openai.py
+/service/datastore/openai/self_azure_openai.py
+/service/constant/BxIndexConst.py
+/service/spider/WxPublicArticleSpider.py
+/service/spider/__init__.py
+/service/spider/UrlSpider.py
+/service/download_loader/BatchReader.py
+/service/download_loader/PDFReader.py
+/service/download_loader/SimpleDirectoryReader.py
+/service/download_loader/RemoteDepthReader.py
+/service/download_loader/RemoteReader.py
+/service/download_loader/__init__.py
+/service/download_loader/README.md
+/service/download_loader/PandasExcelReader.py
+/service/download_loader/DocxReader.py
+/service/download_loader/MarkdownReader.py
+/service/download_loader/BxTextSplitter.py
+/service/tdmq/pulsar_producer.py
+/service/chato/RBAC.py
+/service/chato/Summary.py
+/service/chato/file/file_service.py
+/service/chato/file/__init__.py
+/service/chato/user/__init__.py
+/service/chato/user/user_service.py
+/service/chato/question/question_service.py
+/service/chato/question/__init__.py
+/service/chato/chato_conf/rbac_model.conf
+/service/chato/mq/mq_consume.py
+/service/chato/mq/mq.py
+/service/chato/domain/domain_service.py
+/service/chato/domain/__init__.py
+/service/client/__init__.py
+/service/client/ApiGateway.py
+/service/client/tts_ximalaya.py
+/service/client/yizhentv.py
+/service/client/wenxin_image.py
+/service/client/sdapi.py
+/service/client/CommandRequest.py
+
+===/gpt3.py===
+
+# encoding:utf-8
+import sys
+import traceback
+
+from fastapi import FastAPI, Request, Response, HTTPException
+from starlette.middleware.cors import CORSMiddleware
+
+import config
+from model.base import (
+    db
+)
+from routers import (
+    chatoV1_router,
+    trace_router,
+    third_router,
+    testcase_router,
+    chato_public_router,
+    chato_ws_router,
+    statistics_router
+)
+from routers.FileUpload import upload_router
+from routers.Forbid import forbid_router
+from routers.chato_questions import chato_questions_router
+from routers.document_management import document_management_router
+from routers.domain import domains_router
+from routers.domain_v2 import domains_v2_router
+from routers.job import job_router
+from routers.stream import stream_router
+
+if config.ENV == "production":
+    app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
+else:
+    app = FastAPI()
+
+
+@app.middleware("http")
+async def _db_connection(request: Request, call_next):
+    if f"{request.method} {request.url.path}" == "GET /":
+        response = await call_next(request)
+        return response
+    try:
+        db.connect(reuse_if_open=True)
+        response = await call_next(request)
+        return response
+    except Exception as e:
+        traceback.print_exc()
+        try:
+            if not db.is_closed():
+                db.close()
+            db.connect(reuse_if_open=True)
+            response: Response = await call_next(request)
+            return response
+        except Exception as e:
+            raise HTTPException(status_code=500, detail={"msg": ""})
+    finally:
+        if not db.is_closed():
+            db.close()
+
+
+origins = [
+    "*",
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # 允许访问的源
+    allow_credentials=True,  # 支持 cookie
+    allow_methods=["*"],  # 允许使用的请求方法
+    allow_headers=["*"],  # 允许携带的 Headers
+)
+app.include_router(chatoV1_router)
+app.include_router(chato_public_router)
+app.include_router(trace_router)
+app.include_router(third_router)
+app.include_router(testcase_router)
+app.include_router(chato_ws_router)
+app.include_router(document_management_router)
+app.include_router(statistics_router)
+app.include_router(chato_questions_router)
+app.include_router(domains_router)
+app.include_router(domains_v2_router)
+app.include_router(upload_router)
+app.include_router(forbid_router)
+app.include_router(job_router)
+app.include_router(stream_router)
+
+
+@app.get("/")
+async def _health_check():
+    return "health"
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    port = 9000
+    if len(sys.argv) > 1:
+        port = int(sys.argv[1])
+    uvicorn.run(app="gpt3:app", host="0.0.0.0", port=port, workers=2, loop="uvloop")
+
+
+===/gpt3.py===
+
+
+===/requirements.txt===
+
+fastapi==0.89.0
+openai==0.27.0
+pandas
+uvicorn[standard]
+PyMySQL
+jinja2
+peewee
+tiktoken==0.3.2
+elasticsearch==7.14.1
+elasticsearch-dsl==7.4.0
+loguru
+wechatpy
+tenacity
+cos-python-sdk-v5==1.9.22
+silk-python
+beautifulsoup4==4.11.2
+tencentcloud-sdk-python==3.0.833
+python-multipart
+filetype
+sse-starlette
+websockets
+redis
+revChatGPT==2.3.5
+PyJWT
+llama-index==0.4.29
+langchain==0.0.120
+urllib3==1.25.11
+httpx==0.23.3
+certifi==2022.12.7
+requests==2.28.2
+PyPDF2==3.0.1
+docx2txt==0.8
+lingua-language-detector
+pre-commit==2.20.0
+black==22.6.0
+pydantic==1.10.6
+kafka-python==2.0.2
+pydantic== 1.10.6
+pymilvus==2.2.3
+arrow
+pinecone-client==2.2.1
+weaviate-client==3.15.5
+casbin
+casbin_peewee_adapter
+pulsar-client==3.1.0
+hashids==1.3.1
+requests[security]
+chardet
+fake_useragent
+openpyxl==3.1.1
+
+
+===/requirements.txt===
+
+
+===/Dockerfile===
+
+FROM python:3.10.9
+
+WORKDIR /code
+ENV PYTHONPATH=/code
+COPY requirements.txt /code
+RUN pip install -r requirements.txt -i https://mirrors.cloud.tencent.com/pypi/simple
+COPY . /code
+
+ENV OPENAI_API_KEY ''
+ENV TZ Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+
+===/Dockerfile===
+
+
+===/forbid_api.py===
+
+import hashlib
+import json
+import traceback
+from pprint import pprint
+
+import requests
+
+config = {"secret": "3bfb0b0ad479e29b28a9b1c646023300"}
+
+
+def bx_forbid_filter(text):
+    try:
+        url_path = "/api/v2/Quality.robotRecognizeContentV2/"
+        url = f"http://www.baixing.com{url_path}"
+        data = {
+            "bizChannel": "BxChatGPT",
+            "meta": {},
+            "content": {
+                text: {
+                    "recognizeTypes": ["BxChatGPTForbid"],
+                    "type": "text",
+                    "value": text,
+                }
+            },
+        }
+        body = json.dumps(data)
+        md5 = hashlib.md5()
+        md5.update(f'{url_path}{body}{config["secret"]}'.encode("utf-8"))
+        headers = {
+            "Content-Type": "application/json",
+            "BAPI-APP-KEY": "api_chat_gpt",
+            "BAPI-HASH": md5.hexdigest(),
+            "Cookie": "__trackId=271210246506679",
+        }
+        resp = requests.post(url, data=body, headers=headers)
+        pprint(resp.json()["result"])
+        if resp.json()["result"]["contentDecision"]["status"] == "accept":
+            return 0, "", "", ""
+        else:
+            return (
+                1,
+                resp.json()["result"]["contentDecision"]["label"],
+                resp.json()["result"]["contentDecision"]["info"]["message"],
+                resp.json()["result"]["contentDecision"]["info"]["keywords"],
+            )
+    except Exception as e:
+        traceback.print_exc()
+        return 1, "exception", "exception", []
+
+
+def forbid_filter_accept_result(text):
+    audits = {
+        "百姓风控": bx_forbid_filter,
+    }
+    for platform, audit in audits.items():
+        result, label, reason, keywords = audit(text)
+        if result == 1:
+            return False, label, reason, keywords, platform
+    return True, "", "", "", ""
+
+
+if __name__ == "__main__":
+    for s in ["激情裸聊", "杀人偿命", "美女直播", "好好学习 天天向上", "今天天气哈哈哈", "原子弹", "习近平", "胡锦涛"]:
+        print(f"{s} result:", forbid_filter_accept_result(s))
+
+
+===/forbid_api.py===
+
+
+===/README.md===
+
+# chato-service
+
+新的净土，别堆垃圾上来
+
+===/README.md===
+
+
+===/.gitignore===
+
+__pycache__/
+*?.env
+venv
+文档.txt
+*.log
+.qiniu_pythonsdk_hostscache.json
+shell
+.idea/
+testcase/*
+!testcase/datastore
+!testcase/index
+data-gpt-index.json
+data_gpt
+.vscode/
+delete_merged_branch_name.txt
+config/_*_config.py
+.DS_Store/
+.env
+.DS_Store
+Qdrant.py
+dev_config.py
+*/.openai-api-key.txt
+
+
+===/.gitignore===
+
+
+===/pulsar_consumer.py===
+
+import asyncio
+
+import pulsar
+from _pulsar import ConsumerType
+
+import config
+from service.chato.Summary import Summary
+from service.download_loader.BatchReader import BatchReader
+
+client = pulsar.Client(
+    authentication=pulsar.AuthenticationToken(
+        # 已授权角色密钥
+        config.MQ_AUTHENTICATION
+    ),
+    # 服务接入地址
+    service_url=config.MQ_SERVICE_URL,
+)
+
+consumer = client.subscribe(
+    config.MQ_TOPIC_NAME, config.MQ_SUB_NAME, ConsumerType.Shared
+)
+
+
+async def mq_handler(data, mtype):
+    body = data.get("body", "")
+    trace_id = data.get("trace_id", "")
+    account = data.get("account", "")
+    if mtype == "BatchReaderUrl":
+        BatchReader().async_read_url(uuid=body)
+    elif mtype == "BatchReaderIndex":
+        BatchReader().queue_pop(uuid=body)
+    elif mtype == "chatoSummary":
+        Summary().summaryByQuestionId(question_id=body)
+    else:
+        print("mq_handler: unknown mtype", data, mtype)
+
+
+async def mq_consumer():
+    while True:
+        msg = consumer.receive()
+        try:
+            print(msg.properties(), msg.partition_key())
+            await mq_handler(msg.properties(), msg.partition_key())
+            # Acknowledge successful processing of the message
+            consumer.acknowledge(msg)
+        except Exception as e:
+            print(str(e))
+            # Message failed to be processed
+            consumer.negative_acknowledge(msg)
+
+
+if __name__ == "__main__":
+    asyncio.run(mq_consumer())
+
+
+===/pulsar_consumer.py===
+
+
+===/routers/trace.py===
+
+import traceback
+from enum import Enum
+
+from fastapi import APIRouter, HTTPException
+from playhouse.shortcuts import model_to_dict
+from pydantic import BaseModel
+
+from model.base import TraceLog, TraceType
+
+router = APIRouter(prefix="/trace", tags=["trace"])
+
+
+class Trace(BaseModel):
+    trace_id: str
+    source: str
+    type: TraceType
+    extra: str = ""
+
+
+@router.post("")
+def tracking(t: Trace):
+    try:
+        t = TraceLog.create(
+            trace_id=t.trace_id, source=t.source, type=t.type, extra=t.extra
+        )
+        return model_to_dict(t)
+    except Exception as e:
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail={"msg": ""})
+
+
+===/routers/trace.py===
+
+
+===/routers/chato_questions.py===
+
+from typing import Union, List
+
+from fastapi import (
+    APIRouter,
+    HTTPException,
+    Depends, Body,
+)
+from pydantic import BaseModel
+
+from model.chato import ChatoDomain, ChatoQuestion, ChatoUser
+from service.cache.SessionCache import sessionCache
+from service.chat.ChatService import ChatService
+from service.chato.question.question_service import query_question_by_time_range
+from service.chato.user.user_service import auth_middleware
+
+chato_questions_router = APIRouter(prefix="/chato/api/v1/questions", tags=["问答记录"])
+
+
+class Param(BaseModel):
+    title: Union[str, None]
+    content_html: Union[str, None]
+    id: Union[int, None]
+    status: Union[str, None]
+
+
+@chato_questions_router.get("/query")
+async def _query(
+        source: str = "all",
+        org_id: int = 0,
+        begin_time: str = "",
+        end_time: str = "",
+        page: int = 1, page_size: int = 20,
+        sender: int = 0,
+        sender_uid: str = "",
+        domain_id: int = 0,
+        domain_slug: str = ""
+):
+    if sender == 0 and sender_uid == "":
+        raise HTTPException(status_code=500, detail={"msg": "该接口仅支持获取单人聊天记录，sender或sender_uid必传一个"})
+    if domain_slug:
+        domain = ChatoDomain.get_or_none(ChatoDomain.slug == domain_slug)
+        if domain is None:
+            raise HTTPException(status_code=500, detail={"msg": "domain 不存在"})
+        domain_id = domain.id
+    return query_question_by_time_range(org_id, source, begin_time, end_time, page, page_size, sender, sender_uid,
+                                        domain_id)
+
+
+@chato_questions_router.post("/{question_id}/evaluate")
+async def evaluate(question_id: int = 0, evaluation: str = Body(alias="evaluation", default=None, embed=True)):
+    question = ChatoQuestion.get_or_none(ChatoQuestion.id == question_id)
+    if question is None:
+        raise HTTPException(status_code=500, detail={"msg": "问题不存在"})
+    if evaluation == 'none':
+        question.evaluation = None
+    else:
+        question.evaluation = evaluation
+    question.save()
+    return {
+        'data': question,
+        'meta': {}
+    }
+
+
+@chato_questions_router.get("/chat/clear")
+async def _query(
+        token: str = "",
+        visitor_type: str = "",
+        domain_slug: str = ""
+):
+    if token == "":
+        raise HTTPException(status_code=500, detail={"msg": "token必传"})
+    if domain_slug == "":
+        raise HTTPException(status_code=500, detail={"msg": "domain_slug必传"})
+
+    if visitor_type == "owner":
+        user: ChatoUser = ChatService.get_user(token)
+        sender_uid_id = user.id
+    else:
+        sender_uid_id = token
+
+    domain = ChatoDomain.get_or_none(ChatoDomain.slug == domain_slug)
+    if domain is None:
+        raise HTTPException(status_code=500, detail={"msg": "domain 不存在"})
+    session_id = sessionCache.reset_session_id(f"sid-{domain.id}-{sender_uid_id}")
+    return {
+        'code': 200,
+        'msg': "success",
+        'data': {"session_id": session_id}
+    }
+
+
+@chato_questions_router.post("/delete")
+async def _delete(
+        answer_ids: List[int] = Body(...), question_ids: List[int] = Body(...), user: ChatoUser = Depends(auth_middleware)
+):
+    if question_ids:
+        questions: ChatoQuestion = ChatoQuestion.select().where(ChatoQuestion.id.in_(question_ids))
+        for question in questions:
+            question.question_deleted = True
+            question.save()
+    if answer_ids:
+        answers = ChatoQuestion.select().where(ChatoQuestion.id.in_(answer_ids))
+        for answer in answers:
+            answer.answer_deleted = True
+            answer.save()
+    return {"code": 200, "data": "success"}
+
+
+===/routers/chato_questions.py===
+
+
+===/routers/domain.py===
+
+import datetime
+import json
+from typing import Union, List
+
+from fastapi import (
+    APIRouter,
+    HTTPException,
+    Depends, Body,
+)
+from playhouse.shortcuts import model_to_dict
+from pydantic import BaseModel
+from pydantic.json import pydantic_encoder
+
+from model.chato import ChatoDomain, ChatoQuestion, ChatoDomainTemplate, ChatoUser
+from routers.chato_v1 import make_hash_id
+from service.chato.domain.domain_service import CustomerLimit, DomainWebModel, Show
+from service.chato.question.question_service import query_question_by_time_range
+from service.chato.user.user_service import auth_middleware
+
+domains_router = APIRouter(prefix="/chato/api/v1/domains", tags=["domain/知识库"])
+
+
+@domains_router.post("/{domain_slug}/whitelist_sites/save")
+async def whitelist_sites_save(domain_slug: str = '', whitelist_sites: List[str] = []):
+    domain = ChatoDomain.get_or_none(ChatoDomain.slug == domain_slug)
+    if domain is None:
+        raise HTTPException(status_code=400, detail={"msg": "没有找到该机器人"})
+    json_str = json.dumps(whitelist_sites)
+    domain.whitelist_sites = json_str
+    domain.save()
+    return {
+        'data': domain,
+        'meta': {}
+    }
+
+
+@domains_router.get("/{domain_slug}/whitelist_sites/check")
+async def check(domain_slug: str = '', site: str = ''):
+    domain = ChatoDomain.get_or_none(ChatoDomain.slug == domain_slug)
+    if domain is None:
+        raise HTTPException(status_code=400, detail={"msg": "没有找到该机器人"})
+    whitelist_sites_str = domain.whitelist_sites
+    check_result = False
+    if whitelist_sites_str:
+        whitelist_sites = json.loads(whitelist_sites_str)
+        for _site in whitelist_sites:
+            if site in _site:
+                check_result = True
+    return {
+        'data': check_result,
+        'meta': {}
+    }
+
+
+@domains_router.post("/{domain_slug}/customer_limit/save")
+async def customer_limit_save(domain_slug: str = '', limit: CustomerLimit = None):
+    domain = ChatoDomain.get_or_none(ChatoDomain.slug == domain_slug)
+    if domain is None:
+        raise HTTPException(status_code=400, detail={"msg": "没有找到该机器人"})
+    json_str = limit.json()
+    domain.customer_limit = json_str
+    domain.save()
+    return {
+        'data': domain,
+        'meta': {}
+    }
+
+@domains_router.get("/{domain_slug}/customer_limit/detail")
+async def customer_limit_detail(domain_slug: str = ''):
+    domain = ChatoDomain.get_or_none(ChatoDomain.slug == domain_slug)
+    if domain is None:
+        raise HTTPException(status_code=400, detail={"msg": "没有找到该机器人"})
+    obj = None
+    if domain.customer_limit:
+        obj = json.loads(domain.customer_limit)
+    return {
+        'data': obj,
+        'meta': {}
+    }
+
+@domains_router.post("/{domain_slug}/customer_limit/save")
+async def customer_limit_save(domain_slug: str = '', limit: CustomerLimit = None):
+    domain = ChatoDomain.get_or_none(ChatoDomain.slug == domain_slug)
+    if domain is None:
+        raise HTTPException(status_code=400, detail={"msg": "没有找到该机器人"})
+    json_str = limit.json()
+    domain.customer_limit = json_str
+    domain.save()
+    return {
+        'data': domain,
+        'meta': {}
+    }
+
+
+@domains_router.post("/{domain_slug}/save")
+async def save(domain_slug: str = '', domain_web_model: DomainWebModel = None):
+    domain: ChatoDomain = ChatoDomain.get_or_none(ChatoDomain.slug == domain_slug)
+    if domain is None:
+        raise HTTPException(status_code=400, detail={"msg": "没有找到该机器人"})
+
+    if domain_web_model.customer_limit:
+        json_str = domain_web_model.customer_limit.json()
+        domain.customer_limit = json_str
+
+    if domain_web_model.shortcuts:
+        json_str = json.dumps(domain_web_model.shortcuts, default=pydantic_encoder)
+        print(json_str)
+        domain.shortcuts = json_str
+    else:
+        domain.shortcuts = None
+
+    if domain_web_model.show:
+        if domain_web_model.show.name_and_avatar_show == 1:
+            domain.name_show = 1
+            domain.avatar_show = 1
+        else:
+            domain.name_show = 0
+            domain.avatar_show = 0
+        if domain_web_model.show.desc_show == 1:
+            domain.desc_show = 1
+        else:
+            domain.desc_show = 0
+
+        domain.suspend_style = domain_web_model.show.suspend_style
+        domain.message_style = domain_web_model.show.message_style
+
+    domain.save()
+    return {
+        'data': domain,
+        'meta': {}
+    }
+
+@domains_router.get("/{domain_slug}/detail")
+async def _detail(domain_slug: str = ''):
+    domain: ChatoDomain = ChatoDomain.get_or_none(ChatoDomain.slug == domain_slug)
+    if domain is None:
+        raise HTTPException(status_code=400, detail={"msg": "没有找到该机器人"})
+    domain_web_model = DomainWebModel()
+    if domain.customer_limit:
+        obj = json.loads(domain.customer_limit)
+        domain_web_model.customer_limit = obj
+    else:
+        domain_web_model.customer_limit = CustomerLimit()
+    if domain.shortcuts:
+        obj = json.loads(domain.shortcuts)
+        domain_web_model.shortcuts = obj
+    show = Show()
+    if domain.avatar_show and domain.name_show:
+        show.name_and_avatar_show = (domain.avatar_show == 1) and (domain.name_show == 1)
+    else:
+        show.name_and_avatar_show = False
+    if domain.desc_show:
+        show.desc_show = domain.desc_show == 1
+    else:
+        show.desc_show = False
+
+    show.message_style = domain.message_style
+    show.suspend_style = domain.suspend_style
+
+    domain_web_model.show = show
+
+    return {
+        'data': domain_web_model,
+        'meta': {}
+    }
+
+
+@domains_router.post("/{domain_id}/delete")
+async def _delete(domain_id: str = '', user: ChatoUser = Depends(auth_middleware)):
+    domain: ChatoDomain = ChatoDomain.get_or_none(ChatoDomain.id == domain_id)
+    if domain is None:
+        raise HTTPException(status_code=400, detail={"msg": "没有找到该机器人"})
+    # count = ChatoDomain.select().where(ChatoDomain.org == domain.org.id).count()
+    # if count <= 1:
+    #     raise HTTPException(status_code=400, detail={"msg": "必须保留一个机器人"})
+    domain.deleted = datetime.datetime.now()
+    domain.save()
+
+    domains = [
+        model_to_dict(temp, max_depth=1)
+        for temp in ChatoDomain.select().where(ChatoDomain.org == domain.org.id)
+    ]
+    return {
+        'data': domains,
+        'meta': {}
+    }
+
+
+@domains_router.get("/template/list")
+async def _template_list(type: int=1):
+
+    templates = [
+        model_to_dict(temp, max_depth=0)
+        for temp in ChatoDomainTemplate.select().where(ChatoDomainTemplate.type == type).order_by(ChatoDomainTemplate.created.desc())
+    ]
+
+    return {
+        'data': templates,
+        'meta': {}
+    }
+
+
+@domains_router.post("/create_by_template")
+async def _create_by_template(template_id: int = 0, user: ChatoUser = Depends(auth_middleware)):
+    template: ChatoDomainTemplate = ChatoDomainTemplate.get_or_none(template_id)
+    if template is None:
+        raise HTTPException(status_code=400, detail={"msg": "没有找到该机器人模版"})
+    domain = ChatoDomain(**model_to_dict(template))
+    domain.id = None
+    domain.org = user.org
+    domain.creator = user
+    domain.updater = user
+    domain.save()
+    domain.slug = make_hash_id(domain.id)
+    domain.save()
+    return {
+        'data': model_to_dict(domain),
+        'meta': {}
+    }
+
+===/routers/domain.py===
+
+
+===/routers/testcase.py===
+
+from typing import Union
+
+from fastapi import APIRouter
+from langchain.prompts import HumanMessagePromptTemplate, SystemMessagePromptTemplate
+from langchain.schema import HumanMessage, SystemMessage
+from pydantic import BaseModel
+from starlette.responses import StreamingResponse
+
+from chat import chatForLlamaIndex
+from service.chato.Summary import Summary
+from service.datastore.factory import get_datastore
+from service.datastore.models.models import QueryWithEmbedding, Filter
+from service.datastore.openai.main_openai import auto_openai
+from service.download_loader.BatchReader import BatchReader
+from service.bx_index.BxGPTIndex import bxGPTIndex
+
+router = APIRouter(prefix="/test/api", tags=["test_v1"])
+
+
+class ChatMultParam(BaseModel):
+    content: str
+    builders: Union[list, None]
+    documentNames: Union[list, None]
+    roleSystem: Union[str, None]
+    userSystem: Union[str, None]
+
+
+@router.post("/chat_mult")
+async def _chat_mult(q: ChatMultParam):
+    result = {}
+    force_messages = [
+        SystemMessage(content=q.roleSystem)
+    ]
+    for builder in q.builders:
+        ctx = await chatForLlamaIndex(
+            text=q.content,
+            group_name="test",
+            sender="test",
+            robot="test",
+            ask_time=None,
+            source="test",
+            domains=q.documentNames,
+            builder=builder,
+            messages=force_messages
+        )
+        result[builder] = {"content": ctx.response_content, "document_name": ctx.documentNames,
+                           "documents": ctx.documents}
+    return result
+
+
+@router.post("/queue_pop/{doc_id}")
+async def _queue_pop(doc_id: str):
+    """写入index"""
+    BatchReader().queue_pop(uuid=doc_id)
+    return "success"
+
+
+class QueueParamModel(BaseModel):
+    document_name: str
+    text: Union[str, None] = None
+    template: Union[str, None] = None
+    url: Union[str, None] = None
+    business_type: Union[str, None] = None
+    domain_id: Union[str, None] = None
+
+
+@router.post("/queue_push")
+async def _queue_push(q: QueueParamModel):
+    """开始解析url"""
+    metadata = {}
+    metadata["url"] = q.url
+    metadata["document_name"] = q.document_name
+    metadata["builder"] = "gptindex"
+    metadata["business_type"] = q.business_type
+    metadata["domain_id"] = q.domain_id
+    doc_ids = BatchReader().queue_push(metadata=metadata)
+    return doc_ids
+
+
+@router.post("/read_url/{doc_id}")
+async def _read_url(doc_id: str):
+    """分割text"""
+    doc_ids = BatchReader().async_read_url(uuid=doc_id)
+    return doc_ids
+
+
+@router.delete("/GPTIndex/delete")
+async def _delete_index(q: QueueParamModel):
+    result = bxGPTIndex.delete(q.document_name)
+    return result
+
+
+@router.post("/summary/{question_id}")
+async def _summary(question_id: str):
+    Summary().summaryByQuestionId(question_id=question_id)
+
+
+@router.post("/query/similarity")
+async def _query_(q: ChatMultParam):
+    datastore = get_datastore("milvus")
+    question = q.content
+    embedding = auto_openai().embed_query(question)
+    query = QueryWithEmbedding(
+        query=question,
+        filter=Filter(
+            document_name=q.documentNames,
+        ),
+        top_k=5,
+        embedding=embedding,
+    )
+    response = datastore.queryWithEmbedding(
+        [query],
+    )
+    result = []
+    for queryResult in response:
+        results = queryResult.results
+        for document in results:
+            result.append(document.content)
+
+    return {"data": result, "document_name": q.documentNames}
+
+
+@router.get("/stream")
+async def stream_response():
+    return None
+    # async def generate():
+    # for i in range(10):
+    #     yield f"Message {i}\n"
+
+    # return StreamingResponse(chatForLlamaIndex(
+    #         text="你好",
+    #         group_name="",
+    #         sender=f"chato-user-1",
+    #         robot="t",
+    #         ask_time=None,
+    #         source=question.source,
+    #         domains=files_ids_str,
+    #         builder="gpt-index",
+    #         messages=messages,
+    #     ), media_type="text/plain")
+
+
+===/routers/testcase.py===
+
+
+===/routers/embedding.py===
+
+from typing import Union
+
+from fastapi import APIRouter, Request, Query, HTTPException, Body, Form
+from starlette.templating import Jinja2Templates
+
+from embedding import EMBEDDING_MODEL, get_embedding
+from es_model.search import Embedding
+from elasticsearch_dsl import Q
+import time
+
+templates = Jinja2Templates(directory="templates")
+
+router = APIRouter(prefix="/embeddings", tags=["Embedding"])
+
+
+@router.get("/index")
+async def index(request: Request):
+    return templates.TemplateResponse("embeddings.html.jinja", {"request": request})
+
+
+@router.post("/")
+async def list_embeddings(
+    domain: str = Body(...),
+    keywords: str = Body(...),
+    size: int = Body(default=0),
+    page: int = Body(default=0),
+):
+    query = Q("bool", must=[Q("match", deleted=False)])
+    embedding = Embedding()
+    if domain:
+        query = query & Q("bool", must=[Q("term", document_name__keyword=domain)])
+    if keywords != "":
+        query = query & (
+            Q("match_phrase", content=keywords) | Q("match_phrase", template=keywords)
+        )
+    r = embedding.find(query=query, size=size, page=page, sort="-updated_at")
+    count = r.count
+    embeddings = [{k: v for k, v in vars(x).items() if k != "embedding"} for x in r]
+    return {"count": count, "data": embeddings}
+
+
+@router.post("/save")
+async def create_embedding(
+    id: str = Body(...),
+    document_name: str = Body(...),
+    content: str = Body(...),
+    template: Union[str, None] = Body(default=None),
+    idx: int = Body(default=0),
+    deleted: int = Body(default=0),
+):
+    if id is not None and id != "":
+        # 修改
+        try:
+            embedding = Embedding().load(id)
+        except FileNotFoundError:
+            raise HTTPException(status_code=404, detail="Resource not found")
+        if document_name is not None:
+            embedding.document_name = document_name
+        if idx is not None:
+            embedding.content_index = idx
+        if content is not None and content != embedding.content:
+            embedding.content = content
+            embedding.embedding = get_embedding(embedding.content)
+        if template is not None:
+            embedding.template = template
+        if deleted is not None and deleted == 1:
+            embedding.deleted = True
+        embedding.updated_at = int(time.time())
+        embedding.save()
+    else:
+        # 新建
+        embedding = Embedding()
+        embedding.document_name = document_name
+        embedding.content_index = idx
+        embedding.content = content
+        embedding.updated_at = int(time.time())
+        if template is not None:
+            embedding.template = template
+        embedding.embedding_model_name = EMBEDDING_MODEL
+        embedding.embedding = get_embedding(embedding.content)
+        embedding.save()
+    return embedding
+
+
+# 批量导入
+@router.post("/export")
+async def export_embedding(
+    data: Union[str, None] = Body(default=None),
+    idx: int = Body(default=0),
+):
+    if not data:
+        raise HTTPException(status_code=404, detail="data is empty")
+    # 分割换行符
+    arr = data.splitlines(False)
+    cnt = 0
+    for item in arr:
+        if not item:
+            continue
+        x = item.split("##", 2)
+        if len(x) < 3:
+            continue
+        s_document_name = x[0]
+        s_content = x[1]
+        s_template = x[2]
+        if not s_document_name or not s_content:
+            continue
+        # 查询es中是否已经有了 es文档=>https://elasticsearch-dsl.readthedocs.io/en/latest/search_dsl.html
+        q = Q("bool", must=[Q("term", content__keyword=s_content)])
+        embedding = Embedding()
+        if s_template:
+            q = q & Q("bool", must=[Q("term", template__keyword=s_template)])
+        r = embedding.find(query=q, size=1)
+        count = r.count
+        # 数量大于0
+        if count > 0:
+            continue
+        # 新建
+        embedding = Embedding()
+        embedding.document_name = s_document_name
+        embedding.content_index = 0
+        embedding.content = s_content
+        embedding.updated_at = int(time.time())
+        if s_template is not None:
+            embedding.template = s_template
+        embedding.embedding_model_name = EMBEDDING_MODEL
+        embedding.embedding = get_embedding(embedding.content)
+        embedding.save()
+        cnt += 1
+
+    return {"code": 200, "success_count": cnt, "data": {}}
+
+
+===/routers/embedding.py===
+
+
+===/routers/job.py===
+
+from fastapi import APIRouter
+
+from model.base import ChatoFile
+from service.download_loader.BatchReader import BatchReader
+from service.mq import wx_msg_enqueue
+
+job_router = APIRouter(prefix="/chato/api/job", tags=["问答记录"])
+
+
+@job_router.get("/start")
+async def _start():
+    # 引入mq，写入索引操作
+    for file in ChatoFile.select().where((ChatoFile.status == ChatoFile.Status.LEARNING.value)
+
+                                         ):
+        if file.content_html and file.type == "text":
+            br = BatchReader()
+            document_name = f"chato_file_{file.id}"
+            uuid = br.getUuid(document_name=document_name, text=file.content_html)
+            trace_id = f"BatchReaderUrl-{uuid}"
+            wx_msg_enqueue(
+                body=uuid, account="", trace_id=trace_id, message_type="BatchReaderUrl"
+            )
+        else:
+            br = BatchReader()
+            document_name = f"chato_file_{file.id}"
+            uuid = br.getUuid(document_name=document_name, text=file.raw_file_url)
+            trace_id = f"BatchReaderUrl-{uuid}"
+            wx_msg_enqueue(
+                body=uuid, account="", trace_id=trace_id, message_type="BatchReaderUrl"
+            )
+        print("uuid", uuid)
+
+    return "success"
+
+
+@job_router.get("/embeddings")
+async def _embeddings():
+    # 引入mq，写入索引操作
+    for file in ChatoFile.select().where((ChatoFile.status == ChatoFile.Status.LEARNING.value)
+
+                                         ):
+        if file.content_html and file.type == "text":
+            br = BatchReader()
+            document_name = f"chato_file_{file.id}"
+            uuid = br.getUuid(document_name=document_name, text=file.content_html)
+            trace_id = f"BatchReaderIndex-{uuid}"
+            wx_msg_enqueue(
+                body=uuid,
+                account="",
+                trace_id=trace_id,
+                message_type="BatchReaderIndex",
+            )
+        else:
+            br = BatchReader()
+            document_name = f"chato_file_{file.id}"
+            uuid = br.getUuid(document_name=document_name, text=file.raw_file_url)
+            trace_id = f"BatchReaderIndex-{uuid}"
+            wx_msg_enqueue(
+                body=uuid,
+                account="",
+                trace_id=trace_id,
+                message_type="BatchReaderIndex",
+            )
+        print("uuid", uuid)
+
+    return "success"
+
+
+# 清理错误的文档
+@job_router.get("/error")
+async def _error():
+    # 引入mq，写入索引操作
+    for file in ChatoFile.select().where((ChatoFile.status == ChatoFile.Status.ERROR.value)
+
+                                         ):
+        if file.content_html and file.type == "text":
+            br = BatchReader()
+            document_name = f"chato_file_{file.id}"
+            uuid = br.getUuid(document_name=document_name, text=file.content_html)
+            if uuid:
+                br.del_breakpoint(uuid=uuid)
+                br.del_text(uuid=uuid, splitter="large")
+        else:
+            br = BatchReader()
+            document_name = f"chato_file_{file.id}"
+            uuid = br.getUuid(document_name=document_name, text=file.raw_file_url)
+            if uuid:
+                br.del_breakpoint(uuid=uuid)
+                br.del_text(uuid=uuid, splitter="large")
+        print("error uuid", uuid)
+
+    return "success"
+
+
+===/routers/job.py===
+
+
+===/routers/chato_ws.py===
+
+import asyncio
+import json
+import time
+
+from fastapi import (
+    APIRouter,
+)
+from fastapi import WebSocket, WebSocketDisconnect
+
+from service.chat.ChatService import ChatService
+from util.baixing_fk import baixing_fk_check
+from fastapi.responses import StreamingResponse
+
+router = APIRouter(prefix="/chato", tags=["chato_ws_api"])
+
+
+class WebSocketHandler:
+    def __init__(self, websocket):
+        self.websocket = websocket
+
+    async def receive(self):
+        data = await self.websocket.receive_text()
+        message = json.loads(data)
+        return message
+
+    async def send(self, message):
+        await asyncio.sleep(0.05)
+        await self.websocket.send_text(json.dumps(message, ensure_ascii=False))
+
+    async def start(self):
+        await self.websocket.accept()
+        try:
+            while True:
+                message = await self.receive()
+                print(f"Message received: {message}")
+                if message['type'] == 'ping':
+                    await self.send({'type': 'pong'})
+                elif message['type'] == 'chat':
+                    start_time = time.time()
+                    msg_id = message.get("msg_id", "")
+                    ctx = None
+                    try:
+                        ctx = await ChatService.chat(text=message['text'], domain_slug=message['domain_slug'],
+                                                     token=message['token'], visitor_type=message['visitor_type'],
+                                                     msg_id=msg_id, stream=True)
+                    except Exception as e:
+                        print(e)
+                        pass
+                    if not ctx:
+                        await self.send(
+                            {'type': 'text', "status": "error", "chunk_message": "[noPermission]", "msg_id": msg_id})
+                        continue
+                    elif ctx.type == "error":
+                        await self.send({'type': 'text', "status": "error", "chunk_message": ctx.response_content,
+                                         "msg_id": ctx.msgId, "question_id": ctx.id})
+                        continue
+                    elif ctx.type == "forbid":
+                        await self.send({'type': 'text', "status": "forbid", "chunk_message": ctx.response_content,
+                                         "msg_id": ctx.msgId, "question_id": ctx.id})
+                        await ChatService.save_question(ctx, ctx.response_content, start_time)
+                        continue
+                    elif ctx.type != "text":
+                        await self.send({'type': ctx.type, "status": "done", "chunk_message": ctx.response_content,
+                                         "msg_id": ctx.msgId, "question_id": ctx.id})
+                        await ChatService.save_question(ctx, ctx.response_content, start_time)
+                        continue
+                    elif isinstance(ctx.response_content, str):
+                        await self.send(
+                            {'type': 'text', "status": "done", "chunk_message": ctx.response_content,
+                             "msg_id": ctx.msgId, "question_id": ctx.id})
+                        continue
+                    last_text = ""
+                    curr_start = 0
+                    window_size = 20
+                    answer = ""
+                    accept = True
+                    for chunk in ctx.response_content:
+                        chunk_message = chunk['choices'][0]['delta']
+                        # 只匹配content，不匹配role
+                        content = chunk_message.get("content", "")
+                        if not content:
+                            continue
+                        answer += content
+                        last_text += content
+                        if len(last_text) - curr_start >= window_size:
+                            if baixing_fk_check(last_text[curr_start:curr_start + window_size]) != "accept":
+                                accept = False
+                                break
+                            curr_start += window_size
+                        await self.send(
+                            {'type': 'text', "status": "running", "chunk_message": content, "msg_id": ctx.msgId})
+
+                    if not accept:
+                        await self.send({'type': 'text', "status": "forbid",
+                                         "chunk_message": "\n\n该结果依照您所在国家/地区法律法规不能展示，已被系统隐藏。",
+                                         "msg_id": ctx.msgId, "question_id": ctx.id})
+                        continue
+                    cost_time_s = "{:.2f}".format(time.time() - start_time)
+                    # 查询文件信息
+                    await self.send(
+                        {'type': 'text', "status": "done", "chunk_message": "", "source": ctx.documents,
+                         "cost_time_s": cost_time_s, "msg_id": ctx.msgId, "question_id": ctx.id,
+                         "session_id": ctx.session_id})
+
+                    # 保存聊天记录
+                    await ChatService.save_question(ctx, answer, start_time)
+        except WebSocketDisconnect:
+            print("WebSocket disconnected")
+
+
+@router.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    handler = WebSocketHandler(websocket)
+    await handler.start()
+
+
+@router.get("/stream")
+async def stream():
+    async def event_stream():
+        # 模拟生成一些事件数据
+        ctx = await ChatService.chat(text="帮我写一篇作文", domain_slug="xNMxco-11",
+                                     token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZXhwIjoxNjg1MTA4NjcwfQ.Pk5oPt-7zG3Gcii0S8KNQVQVblPvYAb6kXrNAExbGHc",
+                                     visitor_type="owner",
+                                     msg_id="11", stream=True)
+
+        for chunk in ctx.response_content:
+            chunk_message = chunk['choices'][0]['delta']
+            # 只匹配content，不匹配role
+            content = chunk_message.get("content", "")
+            if not content:
+                continue
+            # 使用 yield 关键字发送每个事件作为流的一部分
+            yield content
+
+    # 返回 StreamingResponse 对象，将事件流作为响应的内容
+    return StreamingResponse(event_stream(), media_type='text/event-stream')
+
+
+===/routers/chato_ws.py===
+
+
+===/routers/__init__.py===
+
+from .trace import router as trace_router
+from .chato_v1 import router as chatoV1_router
+from .chato_public import router as chato_public_router
+from .third import router as third_router
+from .testcase import router as testcase_router
+from .chato_ws import router as chato_ws_router
+from .statistics import router as statistics_router
+
+
+===/routers/__init__.py===
+
+
+===/routers/domain_v2.py===
+
+import datetime
+import json
+from typing import Union, List
+
+from fastapi import (
+    APIRouter,
+    HTTPException,
+    Depends, Body,
+)
+from playhouse.shortcuts import model_to_dict
+from pydantic import BaseModel
+from pydantic.json import pydantic_encoder
+
+from model.chato import ChatoDomain, ChatoQuestion, ChatoDomainTemplate, ChatoUser
+from routers.chato_v1 import make_hash_id
+from service.chato.domain.domain_service import CustomerLimit, DomainWebModel, Show
+from service.chato.question.question_service import query_question_by_time_range
+from service.chato.user.user_service import auth_middleware
+
+domains_v2_router = APIRouter(prefix="/chato/api/v2/domains", tags=["domain/知识库"])
+
+
+@domains_v2_router.get("/template/list")
+async def _template_list():
+
+    doc_templates = [
+        model_to_dict(temp, max_depth=0)
+        for temp in ChatoDomainTemplate.select().where(ChatoDomainTemplate.type == 1).order_by(ChatoDomainTemplate.created.desc())
+    ]
+
+    person_templates = [
+        model_to_dict(temp, max_depth=0)
+        for temp in
+        ChatoDomainTemplate.select().where(ChatoDomainTemplate.type == 2).order_by(ChatoDomainTemplate.created.desc())
+    ]
+
+    return {
+        'data': [
+            {
+                "title": "知识机器人",
+                "desc": "重点学习训练素材，可以具备更专业精深的业务知识，适合不需要太多个性要求，提问较为简单明了的情况。",
+                "templates": doc_templates
+            },
+            {
+                "title": "个性机器人",
+                "desc": "重点学习个性化的背景设定，更多发挥算法自身能力，适合不用上传训练素材，或者提问较长的情况。",
+                "templates": person_templates
+            },
+        ],
+        'meta': {}
+    }
+
+
+===/routers/domain_v2.py===
+
+
+===/routers/document_management.py===
+
+from typing import Union, List
+
+from fastapi import (
+    APIRouter,
+    HTTPException,
+    Depends, )
+from fastapi.params import Body
+from pydantic import BaseModel
+
+from model.chato import ChatoUser
+from service.chato.user.user_service import auth_middleware, check_user_by_domain
+from service.spider import UrlSpider
+from service.spider.WxPublicArticleSpider import WxPublicArticleSpider
+from service.document_management.QaText import QaText
+from service.document_management.text import Text
+from service.entity.QaParam import QaParam
+
+document_management_router = APIRouter(prefix="/chato/api/document_management", tags=["document_management"])
+
+
+class Param(BaseModel):
+    title: Union[str, None]
+    content_html: Union[str, None]
+    id: Union[int, None]
+    status: Union[str, None]
+
+
+@document_management_router.post("/{domain_id}/text")
+async def _save_text(
+        p: Param, domain_id: int, user: ChatoUser = Depends(auth_middleware)
+):
+    check_user_by_domain(user.org, domain_id)
+    try:
+        if p.id and p.status == "delete":
+            file_id, uuid = Text.delete(user_id=user.id, domain_id=domain_id, id=p.id)
+        elif p.status == "create":
+            file_id, uuid = Text.create(user_id=user.id, domain_id=domain_id, title=p.title,
+                                        content_html=p.content_html)
+        elif p.status == "update":
+            file_id, uuid = Text.update(user_id=user.id, domain_id=domain_id, title=p.title,
+                                        content_html=p.content_html, id=p.id)
+        else:
+            raise HTTPException(status_code=400, detail={"msg": "参数错误"})
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "保存文本失败"})
+    return {"code": 200, "data": {"uuid": uuid, "id": file_id}, "msg": "success"}
+
+
+@document_management_router.post("/{domain_id}/qa/text")
+async def _save_qa(
+        p: QaParam, domain_id: int, user: ChatoUser = Depends(auth_middleware)
+):
+    check_user_by_domain(user.org, domain_id)
+    try:
+        if p.id and p.status == "delete":
+            file_id, uuid = QaText.delete(user_id=user.id, domain_id=domain_id, id=p.id)
+        elif p.status == "create":
+            file_id, uuid = QaText.create(user_id=user.id, domain_id=domain_id, title=p.title,
+                                          content_html=p.content_html, question_id=p.question_id)
+        elif p.status == "update":
+            file_id, uuid = QaText.update(user_id=user.id, domain_id=domain_id, title=p.title,
+                                          content_html=p.content_html, id=p.id)
+        else:
+            raise HTTPException(status_code=400, detail={"msg": "参数错误"})
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "保存文本失败"})
+    return {"code": 200, "data": {"uuid": uuid, "id": file_id}, "msg": "success"}
+
+
+@document_management_router.post("/spider/url")
+async def _spider_url(
+        urls: List[str] = Body(...)
+):
+    contents = UrlSpider.UrlSpider(urls=urls).get_contents()
+    return {"code": 200, "data": contents, "msg": "success"}
+
+
+@document_management_router.post("/spider/wx-public")
+async def _spider_url_wx_public(
+        wxs: List[str] = Body(...)
+):
+    contents = []
+    for wx in wxs:
+        wx_urls = WxPublicArticleSpider(wx).get_urls()
+        contents.append(wx_urls)
+    return {"code": 200, "data": contents, "msg": "success"}
+
+
+@document_management_router.post("/{domain_id}/spider/wx-public/save")
+async def _spider_url_wx_public_save(
+        wxs: List[str] = Body(...), domain_id: int = 0, user: ChatoUser = Depends(auth_middleware)
+):
+    result = []
+    for wx in wxs:
+        wx_urls = WxPublicArticleSpider(wx).get_urls()
+        for url in wx_urls:
+            title = '【' + wx + '】'+ url[0]
+            print(title)
+            contents = UrlSpider.UrlSpider(urls=[url[1]]).get_contents()
+            if contents and contents[0]:
+                content_html = contents[0][1]
+                file_id, uuid = Text.create(user_id=user.id, domain_id=domain_id, title=title,
+                                              content_html=content_html)
+                print(file_id)
+                result.append(title)
+
+    return {"code": 200, "data": result, "msg": "success"}
+
+
+@document_management_router.post("/{domain_id}/spider/url/save")
+async def _spider_url(
+        urls: List[str] = Body(...), domain_id: int = 0, user: ChatoUser = Depends(auth_middleware)
+):
+    len_size = len(urls)
+    contents = UrlSpider.UrlSpider(urls=urls).get_contents()
+    if len(contents) != len_size:
+        raise HTTPException(status_code=500, detail={"msg": "获取网页内容失败：获取成功数量" + str(len(contents))})
+    for content in contents:
+        print(content)
+        file_id, uuid = Text.create(user_id=user.id, domain_id=domain_id, title=content[0],
+                                    content_html=content[1])
+    return {"code": 200, "data": contents, "msg": "success"}
+
+
+===/routers/document_management.py===
+
+
+===/routers/FileUpload.py===
+
+import hashlib
+import uuid
+from typing import Union
+
+from fastapi import (
+    APIRouter,
+    HTTPException,
+    Depends, UploadFile,
+)
+from filetype import filetype
+from pydantic import BaseModel
+from qcloud_cos import CosConfig, CosS3Client
+
+from model.chato import ChatoUser
+from service.chato.user.user_service import auth_middleware, check_user_by_domain
+from service.core import cos
+from service.core.cos import uploads_binary
+from service.quality.BaixingQuality import baixingQuality
+
+upload_router = APIRouter(prefix="/chato/api/file/upload", tags=["file_upload"])
+
+# 云存储
+SECRET_ID = "AKIDGLCoBIAm9HAnAIAnAIAqHTQ8aCZgYAXe"
+SECRET_KEY = "uYx60f4D7mDPM4WieLm00oOincCXcR1M"
+REGION = "ap-shanghai"
+BUCKET_ID = "1255830993"
+BUCKET_NAME = "afu"
+COS_SERVER = "https://afu-1255830993.cos.ap-shanghai.myqcloud.com"
+
+token = None  # 使用临时密钥需要传入Token，默认为空,可不填
+config = CosConfig(
+    Region=REGION, SecretId=SECRET_ID, SecretKey=SECRET_KEY, Token=token
+)  # 获取配置对象
+client = CosS3Client(config)
+BUCKET = f"{BUCKET_NAME}-{BUCKET_ID}"
+
+# clientSensitive
+SecretId = "AKID62mHYkZIWYN0hEajhRxPq690nRyKcWGs"
+SecretKey = "SilZAa2KZnFXfcflcO3Yt42nbCj4wgQw"
+clientSensitive = CosS3Client(
+    CosConfig(Region=REGION, SecretId=SecretId, SecretKey=SecretKey, Token=None)
+)
+
+
+class Param(BaseModel):
+    base64str: Union[str, None]
+
+
+@upload_router.post("/{domain_id}/image")
+async def _save_image(
+        p: Param, domain_id: int, user: ChatoUser = Depends(auth_middleware)
+):
+    check_user_by_domain(user.org, domain_id)
+    is_success = True
+    imagePath = ""
+    try:
+        rkey = "chato_image/" + uuid.uuid1().hex
+        imagePath = uploads_binary(p.base64str, rkey + ".png")
+        dataMap = {}
+        # 腾讯需要传rkey, 百姓传imagePath
+        dataMap["图片"] = imagePath
+        dataMap["bucket_name"] = BUCKET
+        status, msg = baixingQuality.forbid(dataMap, ["图片,image"])
+        if status == "accept" or status == "pending":
+            is_success = True
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "保存图片失败"})
+    if not is_success:
+        raise HTTPException(status_code=500, detail={"msg": "图片违禁"})
+    return {"code": 200, "data": {"url": imagePath}, "msg": "success"}
+
+
+@upload_router.post("/{domain_id}/file")
+async def _save_file(
+        file: UploadFile, domain_id: int, user: ChatoUser = Depends(auth_middleware)
+):
+    check_user_by_domain(user.org, domain_id)
+    is_success = False
+    raw_file_url = ""
+    try:
+        # 添加cos
+        buffer = await file.read()
+        file_size = len(buffer)
+        file_md5 = hashlib.md5(buffer)
+        kind = filetype.guess(buffer)
+        key, mime = f"chato_image/avater_{user.org.id}/{file_md5.hexdigest()}", "unknown"
+        ftype = "unknown"
+        if kind:
+            ftype = f"{kind.extension}"
+            key += f".{ftype}"
+            mime = kind.mime
+        raw_file_url = cos.upload_binary(buffer, key)
+        dataMap = {}
+        # 腾讯需要传rkey, 百姓传imagePath
+        dataMap["图片"] = raw_file_url
+        dataMap["bucket_name"] = BUCKET
+        status, msg = baixingQuality.forbid(dataMap, ["图片,image"])
+        if status == "accept" or status == "pending":
+            is_success = True
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "保存图片失败"})
+    if not is_success:
+        raise HTTPException(status_code=500, detail={"msg": "图片违禁"})
+    return {"code": 200, "data": {"url": raw_file_url}, "msg": "success"}
+
+
+===/routers/FileUpload.py===
+
+
+===/routers/stream.py===
+
+import asyncio
+import json
+import time
+
+from fastapi import (
+    APIRouter,
+)
+from fastapi.responses import StreamingResponse
+
+from service.chat.ChatService import ChatService
+from service.entity.ChatParam import ChatParam
+from util.baixing_fk import baixing_fk_check
+
+stream_router = APIRouter(prefix="/b", tags=["stream_api"])
+
+
+def send(message):
+    return json.dumps(message, ensure_ascii=False)
+
+
+async def event_stream(p: ChatParam):
+    start_time = time.time()
+    msg_id = p.msg_id
+    ctx = None
+    try:
+        ctx = await ChatService.chat(text=p.text, domain_slug=p.domain_slug,
+                                     token=p.token, visitor_type=p.visitor_type,
+                                     msg_id=msg_id, stream=True)
+    except Exception as e:
+        print(e)
+        pass
+    if not ctx:
+        yield send(
+            {'type': 'text', "status": "error", "chunk_message": "[noPermission]", "msg_id": msg_id})
+        return
+    elif ctx.type == "error":
+        yield send({'type': 'text', "status": "error", "chunk_message": ctx.response_content,
+                    "msg_id": ctx.msgId, "question_id": ctx.id})
+        return
+    elif ctx.type == "forbid":
+        yield send({'type': 'text', "status": "forbid", "chunk_message": ctx.response_content,
+                    "msg_id": ctx.msgId, "question_id": ctx.id})
+        await ChatService.save_question(ctx, ctx.response_content, start_time)
+        return
+    elif ctx.type != "text":
+        yield send({'type': ctx.type, "status": "done", "chunk_message": ctx.response_content,
+                    "msg_id": ctx.msgId, "question_id": ctx.id})
+        await ChatService.save_question(ctx, ctx.response_content, start_time)
+        return
+    elif isinstance(ctx.response_content, str):
+        yield send(
+            {'type': 'text', "status": "done", "chunk_message": ctx.response_content,
+             "msg_id": ctx.msgId, "question_id": ctx.id})
+        return
+    last_text = ""
+    curr_start = 0
+    window_size = 20
+    answer = ""
+    accept = True
+    for chunk in ctx.response_content:
+        chunk_message = chunk['choices'][0]['delta']
+        # 只匹配content，不匹配role
+        content = chunk_message.get("content", "")
+        if not content:
+            continue
+        answer += content
+        last_text += content
+        if len(last_text) - curr_start >= window_size:
+            if baixing_fk_check(last_text[curr_start:curr_start + window_size]) != "accept":
+                accept = False
+                break
+            curr_start += window_size
+        yield send(
+            {'type': 'text', "status": "running", "chunk_message": content, "msg_id": ctx.msgId})
+
+    if not accept:
+        yield send({'type': 'text', "status": "forbid",
+                    "chunk_message": "\n\n该结果依照您所在国家/地区法律法规不能展示，已被系统隐藏。",
+                    "msg_id": ctx.msgId, "question_id": ctx.id})
+        return
+    cost_time_s = "{:.2f}".format(time.time() - start_time)
+    # 查询文件信息
+    yield send(
+        {'type': 'text', "status": "done", "chunk_message": "", "source": ctx.documents,
+         "cost_time_s": cost_time_s, "msg_id": ctx.msgId, "question_id": ctx.id,
+         "session_id": ctx.session_id})
+
+    # 保存聊天记录
+    await ChatService.save_question(ctx, answer, start_time)
+    return
+
+
+@stream_router.post("/stream")
+async def _stream(
+        p: ChatParam
+):
+    return StreamingResponse(event_stream(p), media_type='text/event-stream')
+
+
+===/routers/stream.py===
+
+
+===/routers/statistics.py===
+
+import hashlib
+import math
+from datetime import datetime, timedelta
+from typing import Union
+
+import filetype
+import jwt
+import requests
+from fastapi import (
+    APIRouter,
+    HTTPException,
+    UploadFile,
+    Request,
+    Depends,
+    Query,
+    Body,
+)
+from hashids import Hashids
+from langchain.schema import SystemMessage
+from playhouse.shortcuts import model_to_dict
+from pydantic import BaseModel
+
+from chat import chatForLlamaIndex
+from model.base import db
+from model.chato import ChatoUser, ChatoOrg, ChatoDomain, ChatoFile, ChatoQuestion
+from service.bx_index.BxGPTIndex import bxGPTIndex
+from service.chato.file.file_service import make_file_index
+from service.chato.question.question_service import statistics, query_question_by_time_range
+from service.chato.user.user_service import create_token, LoginParam, login_mobile_code, check_mobile_code, \
+    check_user_by_org, invite_mobile_code, auth_middleware, check_user_by_domain, check_user_by_file
+from service.core import cos
+from service.datastore.openai.token import tiktoken_gpt3_len
+
+router = APIRouter(prefix="/chato/api/v1/statistics", tags=["数据统计"])
+
+
+@router.get("/questions/summary")
+async def _questions_summary(
+        org_id: int = 0,
+        domain_id: int = 0,
+        user: ChatoUser = Depends(auth_middleware),
+):
+    if user.role == ChatoUser.Role.SUPER.value or user.role == ChatoUser.Role.OWNER.value:
+        org_id = user.org.id
+    else:
+        raise HTTPException(status_code=403, detail={"msg": "没有权限"})
+    data = statistics(org_id, domain_id)
+    return {
+        'data': data,
+        'meta': {}
+    }
+
+
+@router.get("/questions/query")
+async def _questions_query(
+        source: str = "all",
+        org_id: int = 0,
+        domain_id: int = 0,
+        begin_time: str = "",
+        end_time: str = "",
+        page: int = 1, page_size: int = 20,
+        evaluation: str = "",
+        user: ChatoUser = Depends(auth_middleware),
+):
+    if user.role == ChatoUser.Role.SUPER.value or user.role == ChatoUser.Role.OWNER.value:
+        org_id = user.org.id
+    else:
+        raise HTTPException(status_code=403, detail={"msg": "没有权限"})
+    return query_question_by_time_range(org_id, source, begin_time, end_time, page, page_size, evaluation=evaluation,
+                                        domain_id=domain_id)
+
+
+===/routers/statistics.py===
+
+
+===/routers/chato_public.py===
+
+import random
+import uuid
+from datetime import datetime
+
+from fastapi import APIRouter, Body, Query, HTTPException
+from langchain.schema import SystemMessage
+from playhouse.shortcuts import model_to_dict
+
+from chat import chatForLlamaIndex
+from model.chato import ChatoDomain, ChatoFile, ChatoQuestion
+from service.chat.ChatService import ChatService
+from service.datastore.openai.token import tiktoken_gpt3_len
+
+router = APIRouter(prefix="/chato/api-public", tags=["chato_public"])
+
+
+@router.get("/domains/{domain_slug}")
+async def _chato_bot_public_info(domain_slug: str):
+    domain = ChatoDomain.get_or_none(ChatoDomain.slug == domain_slug)
+    if domain is None:
+        raise HTTPException(status_code=400, detail={"msg": "没有找到该机器人"})
+    if domain:
+        if not domain.avatar:
+            # 随机5个头像
+            domain.avatar = random.choice(
+                ['https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_01.png',
+                 'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_03.png',
+                 'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_04.png',
+                 'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_05.png'])
+        if not domain.name:
+            domain.name = "阿旺机器人"
+        if not domain.message_style:
+            domain.message_style = "#4C83F3"
+        if not domain.suspend_style:
+            domain.suspend_style = "#4C83F3"
+        if domain.avatar_show == 1:
+            domain.avatar_show = True
+        else:
+            domain.avatar_show = False
+        if domain.name_show == 1:
+            domain.name_show = True
+        else:
+            domain.name_show = False
+    return {"data": model_to_dict(domain, max_depth=0)}
+
+
+@router.post("/domains/{domain_slug}/chat")
+async def _chato_bot_public_chat(
+        p: str | None = Body(alias="p", default=None, embed=True),
+        uid: str | None = Body(alias="uid", default=None, embed=True),
+        gid: str | None = Body(alias="gid", default=None, embed=True),
+        domain_slug: str = Query(),
+):
+    begin_time = datetime.now()
+    if not p:
+        raise HTTPException(status_code=400, detail={"msg": "请输入问题"})
+
+    if uid is None or not uid:
+        uid = f"bxuid-{uuid.uuid4()}"
+    sender_uid = uid
+
+    # 查询domain相关信息
+    domain = ChatoDomain.get_or_none(ChatoDomain.slug == domain_slug)
+    if domain is None:
+        raise HTTPException(status_code=403, detail={"msg": "请求机器人失败"})
+
+    ctx = None
+    try:
+        ctx = await ChatService.chat(text=p, domain_slug=domain.slug,
+                                     token=uid, visitor_type="visitor",
+                                     msg_id="", stream=False)
+    except Exception as e:
+        print(e)
+        pass
+
+    return {
+        "data": {
+            "type": ctx.type,
+            "content": ctx.response_content
+        },
+        "meta": {"uid": sender_uid},
+    }
+
+
+===/routers/chato_public.py===
+
+
+===/routers/Forbid.py===
+
+from typing import Union
+
+from fastapi import APIRouter, HTTPException
+
+from pydantic import BaseModel
+
+from service.quality.BaixingQuality import baixingQuality
+
+forbid_router = APIRouter(prefix="/chato/api/forbid", tags=["forbid"])
+
+
+class Param(BaseModel):
+    text: Union[str, None]
+
+
+@forbid_router.post("/{domain_id}")
+async def _forbid(
+        p: Param
+):
+    is_success = False
+    dataMap = {}
+    dataMap["问题"] = p.text
+    status, msg = baixingQuality.forbid(dataMap, ["问题"])
+    if status == "accept" or status == "pending":
+        is_success = True
+    if not is_success:
+        return {"code": 500, "data": {}, "msg": "fail"}
+    return {"code": 200, "data": {}, "msg": "success"}
+
+
+===/routers/Forbid.py===
+
+
+===/routers/third.py===
+
+import math
+
+from fastapi import APIRouter
+from playhouse.shortcuts import model_to_dict
+
+from model.base import ThirdLog
+
+router = APIRouter(prefix="/third", tags=["third_api"])
+
+
+@router.get("/logs/{provider}")
+async def _files(provider: str, page: int = 1, size: int = 10):
+    logs = [
+        model_to_dict(log, max_depth=1)
+        for log in ThirdLog.select()
+        .where((ThirdLog.type == provider) & (ThirdLog.status == "RESPONDED"))
+        .order_by(ThirdLog.created.desc())
+        .offset(size * (page - 1))
+        .limit(size)
+    ]
+    count = (
+        ThirdLog.select()
+        .where((ThirdLog.type == provider) & (ThirdLog.status != "RESPONDED"))
+        .count()
+    )
+    return {
+        "data": logs,
+        "meta": {
+            "pagination": {
+                "page": page,
+                "pageSize": size,
+                "pageCount": math.ceil(count / size),
+                "total": count,
+            },
+        },
+    }
+
+
+===/routers/third.py===
+
+
+===/routers/chato_v1.py===
+
+import hashlib
+import math
+import mimetypes
+import random
+from datetime import datetime
+from typing import Union
+
+import filetype
+import requests
+from fastapi import (
+    APIRouter,
+    HTTPException,
+    UploadFile,
+    Depends,
+    Query,
+    Body,
+)
+from hashids import Hashids
+from langchain.schema import SystemMessage
+from playhouse.shortcuts import model_to_dict
+from pydantic import BaseModel
+
+import forbid_api
+from chat import chatForLlamaIndex
+from model.base import db
+from model.chato import ChatoUser, ChatoOrg, ChatoDomain, ChatoFile, ChatoQuestion
+from service.bx_index.BxGPTIndex import bxGPTIndex
+from service.chat.ChatService import ChatService
+from service.chato.file.file_service import make_file_index
+from service.chato.user.user_service import create_token, LoginParam, login_mobile_code, check_mobile_code, \
+    check_user_by_org, invite_mobile_code, auth_middleware, check_user_by_domain, check_user_by_file
+from service.core import cos
+from service.datastore.openai.token import tiktoken_gpt3_len
+
+router = APIRouter(prefix="/chato/api", tags=["chato_v1"])
+
+SECRET_KEY = "chato_v1"
+ALGORITHM = "HS256"
+EXPIRATION_TIME = 3600 * 24 * 7  # 1 hour
+
+
+@router.get("/auth/token/get")
+async def _auth_get_token(user_id: int):
+    return create_token(user_id)
+
+
+@router.post("/auth/sendVerificationCode")
+async def _get_mobile_code(lp: LoginParam):
+    user = ChatoUser.get_or_none(ChatoUser.mobile == lp.mobile)
+    if (lp.channel and lp.channel == "jianshuo") or user:
+        resp = login_mobile_code(lp.mobile)
+        if resp["code"] != 200:
+            raise HTTPException(status_code=403, detail={"msg": resp.msg})
+        return resp
+    else:
+        raise HTTPException(status_code=403, detail={"msg": "该渠道暂未开放注册"})
+
+
+@router.post("/auth/login")
+async def _login(lp: LoginParam):
+    success, error = check_mobile_code(lp)
+    if not success:
+        raise HTTPException(status_code=401, detail={"msg": error})
+
+    user = ChatoUser.get_or_none(ChatoUser.mobile == lp.mobile)
+    if not user:
+        # 创建组织
+        org = ChatoOrg.create(name="我的组织")
+        # 获取头像
+        avatar = random.choice(
+            ['https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_01.png',
+             'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_03.png',
+             'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_04.png',
+             'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_05.png'])
+        # 创建用户
+        user = ChatoUser.create(
+            nickname="用户-" + lp.mobile[-4:],
+            mobile=lp.mobile,
+            org_id=org.id,
+            status=ChatoUser.Status.NORMAL.value,
+            role=ChatoUser.Role.OWNER.value,
+            avatar=avatar,
+            channel=lp.channel
+        )
+        user.save()
+
+    _domains = [
+        model_to_dict(domain, max_depth=1)
+        for domain in ChatoDomain.select()
+        .where(ChatoDomain.org == user.org.id)
+        .order_by(ChatoDomain.created.desc())
+    ]
+    return {
+        "data": {
+            **model_to_dict(user, max_depth=1),
+            "auth_token": create_token(user.id),
+            "domains": _domains
+        },
+    }
+
+
+def make_hash_id(domain_id: int):
+    try:
+        ALPHABET = 'abcdefghijklmnopqrstuvwxyz1234567890'
+        hashid = Hashids(salt="chato-domain-v2", min_length=16, alphabet=ALPHABET)
+        hsid = hashid.encode(domain_id)
+        return hsid
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "创建失败"})
+
+
+if __name__ == '__main__':
+    print(make_hash_id(191))
+    print(make_hash_id(203))
+
+
+class OrgMember(BaseModel):
+    mobiles: list
+
+
+@router.post("/orgs/{org_id}/invite")
+async def _admin_invite(
+        om: OrgMember, org_id: int, user: ChatoUser = Depends(auth_middleware)
+):
+    check_user_by_org(user.org, org_id)
+    if (user.role != ChatoUser.Role.OWNER.value) & (
+            user.role != ChatoUser.Role.SUPER.value
+    ):
+        raise HTTPException(
+            status_code=403, detail={"msg": "Not the owner of this organization"}
+        )
+    successMobiles = []
+    errorMobiles = []
+    errors = []
+    for mobile in om.mobiles:
+        finduser = ChatoUser.get_or_none(ChatoUser.mobile == mobile)
+        if finduser is not None:
+            if finduser.org.id == user.org.id:
+                successMobiles.append(mobile)
+            else:
+                errorMobiles.append(mobile)
+            continue
+        try:
+            new_user = ChatoUser.create(
+                nickname="用户" + mobile[-4:],
+                mobile=mobile,
+                org_id=user.org.id,
+                status=ChatoUser.Status.PENDING.value,
+                role=ChatoUser.Role.MEMBER.value,
+            )
+            new_user.save()
+            successMobiles.append(mobile)
+        except Exception as e:
+            errorMobiles.append(mobile)
+            errors.append("{} 注册失败: {}\n".format(mobile, str(e)))
+    # 创建一个协程任务并将其添加到事件循环中
+    invite_mobile_code(successMobiles)
+    return {"data": {"successMobiles": successMobiles, "errorMobiles": errorMobiles}}
+
+
+@router.post("/admin/createUser")
+async def _admin_create(lp: LoginParam, user: ChatoUser = Depends(auth_middleware)):
+    if user.role != ChatoUser.Role.SUPER.value:
+        raise HTTPException(status_code=403, detail={"msg": "not admin user"})
+    finduser = ChatoUser.get_or_none(ChatoUser.mobile == lp.mobile)
+    if finduser is not None:
+        raise HTTPException(status_code=400, detail={"msg": "用户已存在"})
+    with db.atomic() as transaction:
+        try:
+            org = ChatoOrg.create(name="我的组织")
+            user = ChatoUser.create(
+                nickname=lp.nickname,
+                mobile=lp.mobile,
+                org=org.id,
+                status=ChatoUser.Status.PENDING.value,
+                role=ChatoUser.Role.OWNER.value,
+            )
+            # avatar
+            avatar = random.choice(
+                ['https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_01.png',
+                 'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_03.png',
+                 'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_04.png',
+                 'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_05.png'])
+
+            domain = ChatoDomain.create(
+                name="机器人",
+                org=org.id,
+                file_count=0,
+                creator_id=user.id,
+                avatar=avatar,
+                system_prompt="我希望你充当我的客服，你的名字是“客服”。你将从给定的信息中为我提供答案，如果没有包含答案，请准确地说“嗯，我不确定”，然后停止。但当用户和你打招呼时，还是请礼貌回应问好。",
+                welcome="你好！有什么可以帮您？",
+            )
+            domain.slug = make_hash_id(domain.id)
+            domain.save()
+        except Exception as e:
+            transaction.rollback()
+            raise HTTPException(status_code=403, detail={"msg": "create user error"})
+    return {
+        "data": {
+            "user": model_to_dict(user, max_depth=1),
+            "org": model_to_dict(org, max_depth=1),
+            "domain": model_to_dict(domain, max_depth=1),
+        }
+    }
+
+
+@router.get("/users/me")
+async def _chato_user(user: ChatoUser = Depends(auth_middleware)):
+    return {"data": model_to_dict(user, max_depth=1)}
+
+
+@router.get("/orgs/{org_id}/users")
+async def _get_users(
+        org_id: int,
+        page: int = 1,
+        page_size: int = 10,
+        user: ChatoUser = Depends(auth_middleware),
+):
+    check_user_by_org(user.org, org_id)
+    if (user.role != ChatoUser.Role.OWNER.value) & (
+            user.role != ChatoUser.Role.SUPER.value
+    ):
+        raise HTTPException(status_code=403, detail={"msg": "不是该组织的管理者"})
+    try:
+        users = [
+            model_to_dict(org, max_depth=1)
+            for org in ChatoUser.select()
+            .where(ChatoUser.org_id == org_id)
+            .order_by(ChatoUser.created.desc())
+            .offset(page_size * (page - 1))
+            .limit(page_size)
+        ]
+        count = ChatoUser.select().where(ChatoUser.org_id == org_id).count()
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "服务出问题了"})
+    return {
+        "data": users,
+        "meta": {
+            "pagination": {
+                "page": page,
+                "page_size": page_size,
+                "page_count": math.ceil(count / page_size),
+                "total": count,
+            },
+        },
+    }
+
+
+@router.get("/orgs/{org_id}")
+async def _chato_org(org_id: int, user: ChatoUser = Depends(auth_middleware)):
+    org = check_user_by_org(user.org, org_id)
+    return {"data": model_to_dict(org, max_depth=1)}
+
+
+def custom_model_dict(domain):
+    dictMap = model_to_dict(domain, max_depth=0)
+    if domain.type == 1:
+        dictMap["system_prompt_max_length"] = 200
+    elif domain.type == 2:
+        dictMap["system_prompt_max_length"] = 1000
+    return dictMap
+
+
+@router.get("/users/me/orgs")
+async def _get_orgs(
+        page: int = 1, page_size: int = 10, user: ChatoUser = Depends(auth_middleware)
+):
+    if user.org is None:
+        raise HTTPException(
+            status_code=403, detail={"msg": "not find org belong to you"}
+        )
+    try:
+        orgs = (
+            ChatoOrg.select()
+            .where(ChatoOrg.id == user.org.id)
+            .offset(page_size * (page - 1))
+            .limit(page_size)
+        )
+        count = ChatoOrg.select().where(ChatoOrg.id == user.org.id).count()
+
+        resp = []
+        for org in orgs:
+            resp.append(
+                {
+                    **model_to_dict(org, max_depth=0),
+                    "domains": [
+                        custom_model_dict(domain)
+                        for domain in ChatoDomain.select()
+                        .where(ChatoDomain.org_id == org.id)
+                        .order_by(ChatoDomain.created.desc())
+                    ],
+                }
+            )
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "服务出问题了"})
+    return {
+        "data": resp,
+        "meta": {
+            "pagination": {
+                "page": page,
+                "page_size": page_size,
+                "page_count": math.ceil(count / page_size),
+                "total": count,
+            },
+        },
+    }
+
+
+@router.get("/orgs/{org_id}/domains")
+async def _get_domains(
+        org_id: int,
+        page: int = 1,
+        page_size: int = 10,
+        user: ChatoUser = Depends(auth_middleware),
+):
+    check_user_by_org(user.org, org_id)
+    try:
+        domains = [
+            model_to_dict(domain, max_depth=1)
+            for domain in ChatoDomain.select()
+            .where(ChatoDomain.org == org_id)
+            .order_by(ChatoDomain.created.desc())
+            .offset(page_size * (page - 1))
+            .limit(page_size)
+        ]
+        count = ChatoDomain.select().where(ChatoDomain.org == org_id).count()
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "服务出问题了"})
+    return {
+        "data": domains,
+        "meta": {
+            "pagination": {
+                "page": page,
+                "page_size": page_size,
+                "page_count": math.ceil(count / page_size),
+                "total": count,
+            },
+        },
+    }
+
+
+class DomainParam(BaseModel):
+    name: str
+
+
+@router.post("/orgs/{org_id}/domains")
+async def _add_domain(
+        dp: DomainParam, org_id: int, user: ChatoUser = Depends(auth_middleware)
+):
+    check_user_by_org(user.org, org_id)
+    try:
+        avatar = random.choice(
+            ['https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_01.png',
+             'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_03.png',
+             'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_04.png',
+             'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_05.png'])
+        domain = ChatoDomain.create(
+            name=dp.name,
+            org_id=org_id,
+            file_count=0,
+            creator_id=user.id,
+            avatar=avatar,
+            system_prompt="我希望你充当我的客服，你的名字是“客服”。你将从给定的信息中为我提供答案，如果没有包含答案，请准确地说“嗯，我不确定”，然后停止。但当用户和你打招呼时，还是请礼貌回应问好。",
+            welcome="你好！有什么可以帮您？",
+        )
+        domain.slug = make_hash_id(domain.id)
+        domain.save()
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "服务出问题了"})
+    return {"data": model_to_dict(domain, max_depth=0)}
+
+
+@router.get("/domains/{domain_id}")
+async def _domain(domain_id: int, user: ChatoUser = Depends(auth_middleware)):
+    domain = check_user_by_domain(user.org, domain_id)
+    if domain:
+        if not domain.avatar:
+            # 随机5个头像
+            domain.avatar = random.choice(
+                ['https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_01.png',
+                 'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_03.png',
+                 'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_04.png',
+                 'https://afu-1255830993.cos.ap-shanghai.myqcloud.com/chato_image/avater_05.png'])
+        if not domain.name:
+            domain.name = "阿旺机器人"
+        if not domain.message_style:
+            domain.message_style = "#4C83F3"
+        if not domain.suspend_style:
+            domain.suspend_style = "#4C83F3"
+        if domain.avatar_show == 1:
+            domain.avatar_show = True
+        else:
+            domain.avatar_show = False
+        if domain.name_show == 1:
+            domain.name_show = True
+        else:
+            domain.name_show = False
+    return {"data": model_to_dict(domain, max_depth=0)}
+
+
+@router.patch("/domains/{domain_id}")
+async def _domain_modify(
+        domain_params: dict, domain_id: int, user: ChatoUser = Depends(auth_middleware)
+):
+    domain = check_user_by_domain(user.org, domain_id)
+
+    param_names = ["system_prompt", "welcome", "avatar", "avatar_show", "name", "name_show", "message_style",
+                   "suspend_style", "lang", "reply_tone", "temperature", "reply_length", 'desc']
+    for param in param_names:
+        value = domain_params.get(param, None)
+        if value is None:
+            continue
+        if value == "" and param not in ['desc']:
+            continue
+        if param in ['system_prompt', 'welcome', 'name', 'desc'] and value != "":
+            accept, *_ = forbid_api.forbid_filter_accept_result(value)
+            if not accept:
+                raise HTTPException(status_code=400, detail={"msg": "含有敏感词"})
+        setattr(domain, param, value)
+    token_size = tiktoken_gpt3_len(domain.system_prompt)
+    if token_size > 3000:
+        raise HTTPException(status_code=400, detail={"msg": "身份设定太长了"})
+    domain.updater = user.id
+    domain.save()
+
+    return {"data": model_to_dict(domain, max_depth=0)}
+
+
+@router.delete("/domains/{domain_id}")
+async def _domain_delete(domain_id: int, user: ChatoUser = Depends(auth_middleware)):
+    domain = check_user_by_domain(user.org, domain_id)
+    try:
+        domain.delete_instance()
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "服务出问题了"})
+    return {"data": model_to_dict(domain, max_depth=0)}
+
+
+class FileParam(BaseModel):
+    title: Union[str, None]
+    content_html: Union[str, None]
+
+
+@router.get("/domains/{domain_id}/files")
+async def _get_files(
+        domain_id: int,
+        page: int = 1,
+        page_size: int = 10,
+        business_type: str = "document",
+        user: ChatoUser = Depends(auth_middleware),
+):
+    check_user_by_domain(user.org, domain_id)
+    try:
+        files = [
+            model_to_dict(file, max_depth=1)
+            for file in ChatoFile.select()
+            .where(
+                (ChatoFile.domain == domain_id)
+                & (ChatoFile.status != ChatoFile.Status.DELETED.value)
+                & (ChatoFile.business_type == business_type)
+            )
+            .order_by(ChatoFile.created.desc())
+            .offset(page_size * (page - 1))
+            .limit(page_size)
+        ]
+        count = (
+            ChatoFile.select()
+            .where(
+                (ChatoFile.domain == domain_id)
+                & (ChatoFile.status != ChatoFile.Status.DELETED.value)
+                & (ChatoFile.business_type == business_type)
+            )
+            .count()
+        )
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "服务出问题了"})
+    return {
+        "data": files,
+        "meta": {
+            "pagination": {
+                "page": page,
+                "page_size": page_size,
+                "page_count": math.ceil(count / page_size),
+                "total": count,
+            },
+        },
+    }
+
+
+@router.post("/domains/{domain_id}/files")
+async def _add_file(
+        fp: FileParam, domain_id: int, user: ChatoUser = Depends(auth_middleware)
+):
+    check_user_by_domain(user.org, domain_id)
+    try:
+        # 添加cos
+        buffer = fp.content_html.encode()
+        file_size = len(buffer)
+        file_md5 = hashlib.md5(buffer)
+        file_hash = file_md5.hexdigest()
+        key = f"chato/org_{user.org.id}/{file_hash}.pdf"
+        processed_file_url = cos.upload_binary(buffer, key)
+        # 添加数据库
+        file = ChatoFile.create(
+            title=fp.title,
+            content_html=fp.content_html,
+            type=ChatoFile.Type.EDITOR.value,
+            raw_size=file_size,
+            raw_file_hash=file_hash,
+            processed_file_url=processed_file_url,
+            status=ChatoFile.Status.PENDING.value,
+            domain_id=domain_id,
+            creator=user.id,
+        )
+        file.domain.file_count += 1
+        file.domain.save()
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "创建文件失败"})
+    # 建立索引
+    make_file_index(file, processed_file_url)
+    return {"data": model_to_dict(file, max_depth=1)}
+
+
+@router.get("/files/{file_id}")
+async def _get_file(file_id: int, user: ChatoUser = Depends(auth_middleware)):
+    file = check_user_by_file(user.org, file_id)
+    return {"data": model_to_dict(file, max_depth=1)}
+
+
+@router.patch("/files/{file_id}")
+async def _files_update(
+        fp: FileParam, file_id: int, user: ChatoUser = Depends(auth_middleware)
+):
+    file = check_user_by_file(user.org, file_id)
+    try:
+        cos.delete(file.processed_file_url)
+        # 更新cos
+        buffer = fp.content_html.encode()
+        file_size = len(buffer)
+        file_md5 = hashlib.md5(buffer)
+        file_hash = file_md5.hexdigest()
+        key = f"chato/org_{user.org.id}/{file_hash}.pdf"
+        processed_file_url = cos.upload_binary(buffer, key)
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "更新失败，请重试"})
+
+    try:
+        # 更新数据库
+        file.title = fp.title
+        file.content_html = fp.content_html
+        file.raw_size = file_size
+        file.raw_file_hash = file_hash
+        file.processed_file_url = processed_file_url
+        file.status = ChatoFile.Status.PENDING.value
+        file.updater = user.id
+        file.save()
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "更新失败，请重试"})
+    # 删除index
+    try:
+        bxGPTIndex.delete(f"chato_file_{file.id}")
+        make_file_index(file, processed_file_url)
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "索引失败，请联系管理员"})
+    return {"data": model_to_dict(file, max_depth=1)}
+
+
+@router.delete("/files/{file_id}")
+async def _file_delete(file_id: int, user: ChatoUser = Depends(auth_middleware)):
+    file = check_user_by_file(user.org, file_id)
+    try:
+        with db:
+            file.domain.file_count -= 1
+            file.domain.save()
+            file.status = ChatoFile.Status.DELETED.value
+            file.save()
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "删除失败，请重试"})
+    # 删除file时删除索引和云上数据
+    try:
+        bxGPTIndex.delete(f"chato_file_{file.id}")
+        if file.processed_file_url:
+            cos.delete(file.processed_file_url)
+        if file.raw_file_url:
+            cos.delete(file.raw_file_url)
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "删除索引失败，请重试"})
+    return {"data": model_to_dict(file, max_depth=1)}
+
+
+@router.post("/domains/{domain_id}/files/upload/{business_type}")
+async def _chato_upload_file(
+        file: UploadFile, business_type: str, domain_id: int, user: ChatoUser = Depends(auth_middleware)
+):
+    check_user_by_domain(user.org, domain_id)
+    try:
+        buffer = await file.read()
+        file_size = len(buffer)
+        file_md5 = hashlib.md5(buffer)
+        kind = filetype.guess(buffer)
+        key, mime = f"chato/org_{user.org.id}/{file_md5.hexdigest()}", "unknown"
+        ftype = "unknown"
+        if kind:
+            ftype = f"{kind.extension}"
+            key += f".{ftype}"
+            mime = kind.mime
+        else:
+            mimetypes.add_type('text/plain', '.txt')
+            mime_type = mimetypes.guess_type(file.filename)[0]
+            if mime_type and mime_type.startswith("text"):
+                ftype = "txt"
+                key += f".{ftype}"
+                mime = mime_type
+    except Exception as e:
+        raise HTTPException(status_code=403, detail={"msg": "文件读取失败"})
+
+    if file_size > 30 * 1024 * 1024:
+        raise HTTPException(status_code=400, detail={"msg": "文件太大了"})
+
+    if (
+            ChatoFile.get_or_none(
+                (ChatoFile.domain_id == domain_id)
+                & (ChatoFile.status != ChatoFile.Status.DELETED.value)
+                & (ChatoFile.raw_file_hash == file_md5.hexdigest())
+            )
+            is not None
+    ):
+        raise HTTPException(status_code=400, detail={"msg": "该文件已上传"})
+
+    try:
+        raw_file_url = cos.upload_binary(buffer, key)
+        processed_file_url = ""
+        if ftype == "doc":
+            change_pdf_url = f"{raw_file_url}?ci-process=doc-preview&dstType=pdf"
+            pdf_buffer = requests.get(change_pdf_url).content
+            processed_file_url = cos.upload_binary(
+                pdf_buffer, f"chato/org_{user.org.id}/{file_md5.hexdigest()}.pdf"
+            )
+
+        file = ChatoFile.create(
+            title=file.filename,
+            type=ftype,
+            raw_size=file_size,
+            raw_file_url=raw_file_url,
+            raw_file_hash=file_md5.hexdigest(),
+            processed_file_url=processed_file_url,
+            creator=user.id,
+            domain=domain_id,
+            status=ChatoFile.Status.PENDING.value,
+            business_type=business_type
+        )
+        file.domain.file_count += 1
+        file.domain.save()
+    except Exception as e:
+        raise HTTPException(status_code=403, detail={"msg": str(e)})
+    push_url = processed_file_url if processed_file_url else raw_file_url
+    # asyncio.create_task(make_file_index(file, push_url))
+    make_file_index(file, push_url, business_type, domain_id)
+    return {**model_to_dict(file, max_depth=1)}
+
+
+@router.get("/domains/{domain_id}/questions")
+async def _get_domain_questions(
+        domain_id: int,
+        page: int = 1,
+        page_size: int = 10,
+        user: ChatoUser = Depends(auth_middleware),
+):
+    domain = check_user_by_domain(user.org, domain_id)
+    questions = [
+        model_to_dict(question, max_depth=0)
+        for question in ChatoQuestion.select()
+        .where(
+            (ChatoQuestion.domain_id == domain.id)
+            & (ChatoQuestion.sender_id == user.id)
+            & (ChatoQuestion.status == ChatoQuestion.Status.DONE.value)
+        )
+        .order_by(ChatoQuestion.created.desc())
+        .offset(page_size * (page - 1))
+        .limit(page_size)
+    ]
+    count = (
+        ChatoQuestion.select()
+        .where(
+            (ChatoQuestion.domain_id == domain.id)
+            & (ChatoQuestion.sender_id == user.id)
+            & (ChatoQuestion.status == ChatoQuestion.Status.DONE.value)
+        )
+        .count()
+    )
+    return {
+        "data": questions,
+        "meta": {
+            "pagination": {
+                "page": page,
+                "page_size": page_size,
+                "page_count": math.ceil(count / page_size),
+                "total": count,
+            },
+        },
+    }
+
+
+@router.get("/orgs/{org_id}/questions")
+async def _questions_find(
+        org_id: int,
+        page: int = 1,
+        page_size: int = 10,
+        user: ChatoUser = Depends(auth_middleware),
+):
+    check_user_by_org(user.org, org_id)
+    try:
+        questions = [
+            model_to_dict(question, max_depth=1)
+            for question in ChatoQuestion.select()
+            .where(
+                (ChatoQuestion.org == org_id)
+                & (ChatoQuestion.sender == user.id)
+                & (ChatoQuestion.status == ChatoQuestion.Status.DONE.value)
+            )
+            .order_by(ChatoQuestion.created.desc())
+            .offset(page_size * (page - 1))
+            .limit(page_size)
+        ]
+        count = (
+            ChatoQuestion.select()
+            .where(
+                (ChatoQuestion.org == org_id)
+                & (ChatoQuestion.sender == user.id)
+                & (ChatoQuestion.status == ChatoQuestion.Status.DONE.value)
+            )
+            .count()
+        )
+
+        for qs in questions:
+            files = []
+            if qs["ref_file_ids"]:
+                file_ids = []
+                for s in qs["ref_file_ids"].split(","):
+                    if s.isdigit():
+                        file_ids.append(int(s))
+                files = [
+                    model_to_dict(file, max_depth=1)
+                    for file in ChatoFile.select().where(ChatoFile.id.in_(file_ids))
+                ]
+            qs.update({"ref_files": files})
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "服务出问题了"})
+    return {
+        "data": questions,
+        "meta": {
+            "pagination": {
+                "page": page,
+                "page_size": page_size,
+                "page_count": math.ceil(count / page_size),
+                "total": count,
+            },
+        },
+    }
+
+
+class QuestionParam(BaseModel):
+    question: str
+
+
+@router.post("/orgs/{org_id}/questions")
+async def _questions_make(
+        qf: QuestionParam, org_id: int, user: ChatoUser = Depends(auth_middleware)
+):
+    begin_time = datetime.now()
+    check_user_by_org(user.org, org_id)
+    # 问题风控
+
+    # accept, label, reason, keywords, platform = forbid_api.forbid_filter_accept_result(qf.question)
+    # forbid_time = datetime.now() - begin_time
+    try:
+        domain = ChatoDomain.get_or_none(ChatoDomain.org_id == org_id)
+        files_ids_str = [
+            f"chato_file_{chato_file.id}"
+            for chato_file in ChatoFile.select().where(
+                (ChatoFile.domain_id == domain.id)
+                & (ChatoFile.status != ChatoFile.Status.DELETED.value)
+            )
+        ]
+        question = ChatoQuestion.create(
+            type=ChatoQuestion.Type.TEXT.value,
+            sender_id=user.id,
+            org_id=org_id,
+            domain_id=domain.id,
+            question=qf.question,
+            group_name=f"sk-chato-web-org-{org_id}",
+            status=ChatoQuestion.Status.PENDING.value,
+            source="chato-web",
+            robot="chato",
+        )
+
+        # 上一次的消息总结
+        qs = [
+            question
+            for question in ChatoQuestion.select()
+            .where(
+                (ChatoQuestion.sender_id == user.id)
+                & (ChatoQuestion.domain_id == domain.id)
+                & (ChatoQuestion.id != question.id)
+            )
+            .order_by(ChatoQuestion.created.desc())
+            .limit(3)
+        ]
+
+        messages = []
+        message_content = ""
+        if domain.system_prompt:
+            # 系统人设
+            messages.append(SystemMessage(content=domain.system_prompt))
+            message_content += domain.system_prompt
+        history_message = ""
+        if len(qs) >= 1:
+            history_message += "历史对话如下："
+            for q in qs[::-1]:
+                if tiktoken_gpt3_len(message_content) > 512:
+                    continue
+                if q.question and q.answer:
+                    history_message += (
+                            "Human: " + q.question + "\nAssistant: " + q.answer + "\n\n"
+                    )
+                    # messages.append(HumanMessagePromptTemplate.from_template(q.question))
+                    # messages.append(AIMessagePromptTemplate.from_template(q.answer))
+                    message_content += q.question + q.answer
+
+        ctx = await chatForLlamaIndex(
+            text=question.question,
+            group_name=question.group_name,
+            sender=f"chato-user-{user.id}",
+            robot=question.robot,
+            ask_time=None,
+            source=question.source,
+            domains=files_ids_str,
+            builder="gpt-index",
+            messages=messages,
+            history_message=history_message,
+        )
+
+        # 异步生成总结
+        # try:
+        #     trace_id = f"chato-{uuid.uuid1().hex}"
+        #     wx_msg_enqueue(
+        #         body=question.id,
+        #         account="",
+        #         trace_id=trace_id,
+        #         message_type="chatoSummary",
+        #     )
+        # except Exception as e:
+        #     traceback.print_exc()
+        #     pass
+
+        file_ids = []
+        for name in ctx.documentNames:
+            file_ids.append(int(name.split("_")[-1]))
+
+        question.answer = ctx.response_content
+        question.ref_file_ids = ",".join(map(str, file_ids))
+        question.status = ChatoQuestion.Status.DONE.value
+        question.time_to_answer_end = (datetime.now() - begin_time).total_seconds()
+        question.save()
+
+        files = [
+            model_to_dict(file, max_depth=1)
+            for file in ChatoFile.select().where(ChatoFile.id.in_(file_ids))
+        ]
+        return {
+            "data": {"answer": question.answer, "ref_files": files},
+        }
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "答案获取失败"})
+
+
+@router.post("/domains/{domain_id}/chat")
+async def _chato_bot_chat(
+        p: str | None = Body(alias="p", default=None, embed=True),
+        domain_id: int = Query(),
+        user: ChatoUser = Depends(auth_middleware),
+):
+    if not p:
+        raise HTTPException(status_code=400, detail={"msg": "请输入问题"})
+
+    domain = check_user_by_domain(user.org, domain_id)
+
+    ctx = None
+    try:
+        ctx = await ChatService.chat(text=p, domain_slug=domain.slug,
+                                     cuser=user, visitor_type="visitor",
+                                     msg_id="", stream=False)
+    except Exception as e:
+        print(e)
+        pass
+
+    return {
+        "data": {
+            "type": "text",
+            "content": ctx.response_content
+        }
+    }
+
+
+@router.get("/orgs/{org_id}/chat")
+@router.post("/orgs/{org_id}/chat")
+async def _chato_bot_link(
+        param_p: str | None = Query(alias="p", default=None, embed=True),
+        body_p: str | None = Body(alias="p", default=None, embed=True),
+        org_id: int = Query(),
+):
+    p = body_p or param_p
+    if not p:
+        raise HTTPException(status_code=500, detail={"msg": "请输入问题"})
+    begin_time = datetime.now()
+    try:
+        domain = ChatoDomain.get_or_none(ChatoDomain.org_id == org_id)
+        files_ids_str = [
+            f"chato_file_{chato_file.id}"
+            for chato_file in ChatoFile.select().where(
+                (ChatoFile.domain_id == domain.id)
+                & (ChatoFile.status != ChatoFile.Status.DELETED.value)
+            )
+        ]
+
+        ctx = await chatForLlamaIndex(
+            text=p,
+            group_name=f"sk-chato-web-org-{org_id}",
+            sender=f"chato-bot-user",
+            robot="chato",
+            source="chato-bot",
+            domains=files_ids_str,
+        )
+        file_ids = []
+        for name in ctx.documentNames:
+            file_ids.append(int(name.split("_")[-1]))
+
+        question = ChatoQuestion.create(
+            type=ChatoQuestion.Type.TEXT.value,
+            sender_id=7,
+            org_id=org_id,
+            question=p,
+            answer=ctx.response_content,
+            ref_file_ids=",".join(map(str, file_ids)),
+            time_to_answer_end=(datetime.now() - begin_time).total_seconds(),
+            group_name=f"sk-chato-web-org-{org_id}",
+            status=ChatoQuestion.Status.DONE.value,
+            source="chato--web",
+            robot="chato",
+        )
+        if body_p:
+            return {"data": {"type": "text", "content": ctx.response_content}}
+        else:
+            return ctx.response_content
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "答案获取失败"})
+
+
+@router.get("/questions/show")
+async def _questions_show(
+        page: int = 1,
+        page_size: int = 10,
+        extent: str = "",
+        org_id: int = 0,
+        begin_time: str = "",
+        end_time: str = "",
+        user: ChatoUser = Depends(auth_middleware),
+):
+    if user.role == ChatoUser.Role.SUPER.value and extent == "total":
+        if org_id > 0:
+            query = ChatoQuestion.org_id == org_id
+        else:
+            query = 1 == 1
+    elif (
+            user.role == ChatoUser.Role.OWNER.value
+            or user.role == ChatoUser.Role.SUPER.value
+    ):
+        query = ChatoQuestion.org == user.org.id
+    else:
+        raise HTTPException(status_code=403, detail={"msg": "没有权限"})
+    query = query & (ChatoQuestion.status == ChatoQuestion.Status.DONE.value)
+    if begin_time:
+        query = query & (
+                ChatoQuestion.created > datetime.strptime(begin_time, "%Y-%m-%d %H:%M:%S")
+        )
+    if end_time:
+        query = query & (
+                ChatoQuestion.created < datetime.strptime(end_time, "%Y-%m-%d %H:%M:%S")
+        )
+    try:
+        questions = [
+            model_to_dict(question, max_depth=0)
+            for question in ChatoQuestion.select()
+            .where(query)
+            .order_by(ChatoQuestion.created.desc())
+            .offset(page_size * (page - 1))
+            .limit(page_size)
+        ]
+        count = ChatoQuestion.select().where(query).count()
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "获取数据出错，请重试"})
+    return {
+        "data": questions,
+        "meta": {
+            "pagination": {
+                "page": page,
+                "page_size": page_size,
+                "page_count": math.ceil(count / page_size),
+                "total": count,
+            },
+        },
+    }
+
+
+class QuestionScoreParam(BaseModel):
+    score: Union[int, None]
+    extent: Union[str, None]
+
+
+@router.post("/questions/{question_id}/score")
+async def _questions_score(
+        question_id: int, qs: QuestionScoreParam, user: ChatoUser = Depends(auth_middleware)
+):
+    question = ChatoQuestion.get_or_none(question_id)
+    if question is None:
+        raise HTTPException(status_code=403, detail={"msg": "没有权限"})
+    if user.role == ChatoUser.Role.SUPER.value and qs.extent == "total":
+        question.super_score = qs.score
+    elif user.org.id == question.org_id and (
+            user.role == ChatoUser.Role.OWNER.value
+            or user.role == ChatoUser.Role.SUPER.value
+    ):
+        question.owner_score = qs.score
+    else:
+        raise HTTPException(status_code=403, detail={"msg": "没有权限"})
+    question.save()
+    return {"data": model_to_dict(question, max_depth=0)}
+
+
+def get_ave_tool(nums: list, count: int):
+    try:
+        if count < 1:
+            return 0
+        else:
+            return round(sum(nums) / count, 2)
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "获取数据失败"})
+
+
+# 待删除
+@router.get("/questions/summary")
+async def _questions_summary(
+        extent: str = "",
+        org_id: int = 0,
+        begin_time: str = "",
+        end_time: str = "",
+        user: ChatoUser = Depends(auth_middleware),
+):
+    if user.role == ChatoUser.Role.SUPER.value and extent == "total":
+        if org_id > 0:
+            query = ChatoQuestion.org_id == org_id
+        else:
+            query = 1 == 1
+    elif (
+            user.role == ChatoUser.Role.OWNER.value
+            or user.role == ChatoUser.Role.SUPER.value
+    ):
+        query = ChatoQuestion.org == user.org.id
+    else:
+        raise HTTPException(status_code=403, detail={"msg": "没有权限"})
+    if begin_time:
+        query = query & (
+                ChatoQuestion.created > datetime.strptime(begin_time, "%Y-%m-%d %H:%M:%S")
+        )
+    if end_time:
+        query = query & (
+                ChatoQuestion.created < datetime.strptime(end_time, "%Y-%m-%d %H:%M:%S")
+        )
+    try:
+        questions = [
+            model_to_dict(question, max_depth=0)
+            for question in ChatoQuestion.select().where(query)
+        ]
+        count = ChatoQuestion.select().where(query).count()
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "获取数据出错，请重试"})
+
+    try:
+        time_all = [
+            int(q.get("time_to_answer_end"))
+            for q in questions
+            if q["time_to_answer_end"] is not None
+        ]
+        ave_time = get_ave_tool(time_all, len(time_all))
+        owner_score_all = [
+            int(q.get("owner_score")) for q in questions if q["owner_score"] is not None
+        ]
+        ave_owner_score = get_ave_tool(owner_score_all, len(owner_score_all))
+        super_score_all = [
+            int(q.get("super_score")) for q in questions if q["super_score"] is not None
+        ]
+        ave_super_score = get_ave_tool(super_score_all, len(super_score_all))
+        resp_all = [
+            1
+            for q in questions
+            if q["ref_file_ids"] is not None and len(q["ref_file_ids"]) > 0
+        ]
+        resp_rate = get_ave_tool(resp_all, count)
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail={"msg": "获取数据失败"})
+    return {
+        "data": {
+            "ave_time": ave_time,
+            "ave_owner_score": ave_owner_score,
+            "ave_super_score": ave_super_score,
+            "resp_rate": resp_rate,
+        }
+    }
+
+
+===/routers/chato_v1.py===
+
+
+===/chat/__init__.py===
+
+# -*- coding: utf-8 -*-
+import re
+from http.client import HTTPConnection
+from xmlrpc.client import Transport
+
+import requests
+
+import forbid_api
+from config import logger
+from model.Bot import Bot, NameBot, Name
+from model.base import (
+    Persona,
+    Group,
+    Domain,
+    User,
+)
+from service.bx_index.BxGPTIndex import bxGPTIndex
+from service.chat_plugin.chat_request import chatRequest
+from service.chat_plugin.type_enum import TypeEnum
+
+
+def _learn_knowledge(domain_obj, document_name, text):
+    return True
+
+
+def try_call_bot(text, sender, group):
+    try:
+        domains = [m[0] for m in re.findall("&(\\S+)(\\s|$)", text)]
+        nb = (
+            NameBot.select(NameBot, Bot, Name)
+            .join(Bot)
+            .switch(NameBot)
+            .join(Name)
+            .where(Name.name.in_(domains))
+            .get_or_none()
+        )
+        bot = nb.bot if nb else None
+        if bot is None:
+            # try load bot with uuid
+            bot = Bot.select().where(Bot.uuid.in_(domains)).get_or_none()
+        if bot is not None:
+            try:
+                print(f"{bot.endpoint=}")
+                # 如果没有配置 endpoint, 就返回固定文案
+                if bot.endpoint is None or bot.endpoint == "":
+                    return "该智能号已注册生效，但尚未配置机器人，可以晚点再来哦 ( ^_^)/ "
+                p = text.replace(f"&{nb.name.name if nb else bot.uuid}", "")
+                resp = requests.get(bot.endpoint, params={"p": p})
+                print(f"{resp.status_code=}")
+                if resp.status_code == 200:
+                    res_text = (
+                        str(resp.json())
+                        if resp.headers.get("content-type") == "application/json"
+                        else resp.text
+                    )
+                    print(f"{res_text=}")
+                    return res_text + f" &{nb.name.name if nb else bot.uuid}"
+            except Exception as e:
+                logger.error(e)
+            return f"访问 &{nb.name.name if nb else bot.uuid} 出现问题，请稍后再试。"
+    except Exception as e:
+        logger.error(e)
+    return None
+
+
+def _shortcut(text, sender, group=None):
+    resp = try_call_bot(text, sender, group)
+    if resp:
+        return resp
+    if (len(text) < 10 and "点名" in text) or text in ["?", "？"]:
+        return "到！"
+    elif text.lower().startswith("lc ") and len(text) > 3:
+        text = text[3:]
+        return lc(text, sender, group)
+    return None
+
+
+def lc(text, sender, group):
+    url = "http://langchain.mirav.cn:16666/agent"
+    json_resp = requests.post(url, json={"question": text}).json()
+    resp = json_resp["answer"]
+    return resp
+
+
+def _get_doc_names_in_default_domain():
+    domain = Domain.get(name="default")
+    return domain.get_document_names()
+
+
+def get_document_names(g: Group, u: User, text=None):
+    doc_names = set()
+    if u:
+        doc_names.update(Persona.merged_document_names(u.get_id(), -1))
+    if g:
+        doc_names.update(g.merged_document_names())
+
+    if len(doc_names) == 0:
+        doc_names.update(_get_doc_names_in_default_domain())
+
+    print("doc_names:", doc_names)
+    if text:
+        # 尝试查找"&d_xxx"这样的内容，允许通过text指定领域名
+        domains = [m[1] for m in re.findall("(\\s|^)&d_(\\S+)(\\s|$)", text)]
+        doc_names.update(
+            [
+                n
+                for d in Domain.select().where(Domain.name.in_(domains))
+                for n in d.get_document_names()
+            ]
+        )
+    return list(doc_names)
+
+
+async def chatForLlamaIndex(
+        text,
+        group_name,
+        sender,
+        robot,
+        gid=None,
+        domain_type=None,
+        skip_auditing=False,
+        source=None,
+        ask_time=None,
+        domains=None,
+        builder="",
+        system_settings=None,
+        messages=None,
+        history_message=None,
+        stream=False,
+        temperature=0.1,
+        lang="中文",
+        domain=None
+):
+    g: Group = Group.get_or_none(gid=gid) if gid else None
+    resp = _shortcut(text, sender, g)
+    ctx = await chatRequest.message_format(
+        text=text, source=source, id=""
+    )
+    # 视频/语音等外部接口处理
+    if ctx.type != TypeEnum.TEXT.value or ctx.commandCompleted:
+        return ctx
+
+    accept = True
+
+    if resp is None:
+        response = await bxGPTIndex.ask_index(
+            text=ctx.text,
+            document_names=domains,
+            system_settings=system_settings,
+            history_message=history_message,
+            stream=stream,
+            domain_type=domain_type,
+            temperature=temperature,
+            lang=lang,
+            domain=domain
+        )
+        print("chatForLlamaIndex response:", response)
+        if response.isSuccess:
+            resp = response.text
+            ctx.documentNames = response.documentNames
+            ctx.documents = response.documents
+    if resp == "" or resp == None:
+        resp = "对不起，有些没听明白，你可以换个问法吗？"
+    else:
+        (
+            tmp_accept,
+            label,
+            reason,
+            keywords,
+            platform,
+        ) = [None] * 5
+        if accept:
+            (
+                tmp_accept,
+                label,
+                reason,
+                keywords,
+                platform,
+            ) = forbid_api.forbid_filter_accept_result(f"{text}\n{resp}")
+        accept = tmp_accept and accept
+        if not skip_auditing and (not accept):
+            resp = "这个话题我不想聊，聊点别的。"
+            ctx.type = TypeEnum.FORBID.value
+    ctx.response_content = resp
+    return ctx
+
+
+class TimeoutTransport(Transport):
+    timeout = 180
+
+    def set_timeout(self, timeout):
+        self.timeout = timeout
+
+    def make_connection(self, host):
+        h = HTTPConnection(host, timeout=self.timeout)
+        print(h, self.timeout)
+        return h
+
+
+===/chat/__init__.py===
+
+
+===/util/__init__.py===
+
+from datetime import date
+
+import tiktoken
+
+
+def add_years(d, years):
+    """Return a date that's `years` years after the date (or datetime)
+    object `d`. Return the same calendar date (month and day) in the
+    destination year, if it exists, otherwise use the following day
+    (thus changing February 29 to March 1).
+
+    """
+    try:
+        return d.replace(year=d.year + years)
+    except ValueError:
+        return d + (date(d.year + years, 1, 1) - date(d.year, 1, 1))
+        # If you want the other possibility (changing February 29 to February 28)
+        # then the last line should be changed to:
+        # return d + (date(d.year + years, 3, 1) - date(d.year, 3, 1))
+
+
+def set_obj_nonnone_attr_to_dict(d: dict, obj):
+    for k in vars(obj).keys():
+        v = getattr(obj, k)
+        if v is not None:
+            d[k] = v
+
+
+def set_obj_attr_value_if_is_none(obj, key, new_value):
+    if hasattr(obj, key) and getattr(obj, key) is None:
+        setattr(obj, key, new_value)
+
+
+def main():
+    # d = date.today()
+    d = date(year=2024, month=2, day=29)
+    for i in range(80):
+        print(add_years(d, i))
+
+
+def num_tokens_from_messages(messages, model="gpt-3.5-turbo-0301"):
+    """Returns the number of tokens used by a list of messages."""
+    try:
+        encoding = tiktoken.encoding_for_model(model)
+    except KeyError:
+        print("Warning: model not found. Using cl100k_base encoding.")
+        encoding = tiktoken.get_encoding("cl100k_base")
+    if model == "gpt-3.5-turbo":
+        print("Warning: gpt-3.5-turbo may change over time. Returning num tokens assuming gpt-3.5-turbo-0301.")
+        return num_tokens_from_messages(messages, model="gpt-3.5-turbo-0301")
+    elif model == "gpt-4":
+        print("Warning: gpt-4 may change over time. Returning num tokens assuming gpt-4-0314.")
+        return num_tokens_from_messages(messages, model="gpt-4-0314")
+    elif model == "gpt-3.5-turbo-0301":
+        tokens_per_message = 4  # every message follows <|start|>{role/name}\n{content}<|end|>\n
+        tokens_per_name = -1  # if there's a name, the role is omitted
+    elif model == "gpt-4-0314":
+        tokens_per_message = 3
+        tokens_per_name = 1
+    else:
+        raise NotImplementedError(
+            f"""num_tokens_from_messages() is not implemented for model {model}. See https://github.com/openai/openai-python/blob/main/chatml.md for information on how messages are converted to tokens.""")
+    num_tokens = 0
+    for message in messages:
+        num_tokens += tokens_per_message
+        for key, value in message.items():
+            num_tokens += len(encoding.encode(value))
+            if key == "name":
+                num_tokens += tokens_per_name
+    num_tokens += 3  # every reply is primed with <|start|>assistant<|message|>
+    return num_tokens
+
+if __name__ == "__main__":
+    main()
+
+
+===/util/__init__.py===
+
+
+===/util/baixing_fk.py===
+
+import hashlib
+import json
+
+import requests
+
+
+def baixing_fk_check(text):
+    """
+    @return: accept/pending/refuse
+    """
+    config = {"secret": "3bfb0b0ad479e29b28a9b1c646023300"}
+    url_path = "/api/v2/Quality.robotRecognizeContentV2/"
+    url = f"http://www.baixing.com{url_path}"
+    print(f"baixing_fk_check {text}")
+    data = {
+
+        "bizChannel": "BxChatGPT",
+        "meta": {},
+        "content": {
+            text: {
+                "recognizeTypes": ["BxChatGPTForbid"],
+                "type": "text",
+                "value": text,
+            }
+        },
+    }
+    body = json.dumps(data)
+    md5 = hashlib.md5()
+    md5.update(f'{url_path}{body}{config["secret"]}'.encode("utf-8"))
+    headers = {
+        "Content-Type": "application/json",
+        "BAPI-APP-KEY": "api_chat_gpt",
+        "BAPI-HASH": md5.hexdigest(),
+        "Cookie": "__trackId=271210246506679",
+    }
+    resp = requests.post(url, data=body, headers=headers).json()
+    status = resp["result"]["contentDecision"]["status"]
+    return status
+
+
+===/util/baixing_fk.py===
+
+
+===/config/__init__.py===
+
+import importlib
+import os
+import re
+
+from service.core.logger import Logger
+
+logger = Logger("/tmp/all.log", level="debug")
+avoid_replies = [
+    "我想换个话题，讲讲别的吧。",
+    "对不起，我不太想谈论这个话题。",
+    "不好意思，我不想说太多关于这个话题的事情。",
+    "能不能换个话题，我们聊点别的吧。",
+    "这个话题让我有点不舒服，我们聊聊别的吧。",
+    "我的想法可能和你不一样，我们换个话题吧。",
+    "对不起，我有点困惑，所以不太想谈论这个话题。",
+    "不好意思，我现在不想谈论这个话题。",
+    "我想聊些更轻松的话题，你觉得怎么样？",
+    "可不可以聊些别的，这个话题有点沉重。",
+    "我不太清楚这个话题的相关信息，能不能换个话题？",
+    "不好意思，我刚刚有点走神，能不能聊一个新话题？",
+    "我觉得我们可以聊些更有趣的话题，你有什么想聊的？",
+    "我现在有点不想谈论这个话题，你有什么其他的话题吗？",
+    "这个话题让我想起了一些不太愉快的事情，我们换个话题吧。",
+    "我觉得我们可以把话题转移到其他方面，这样会更有趣。",
+    "对不起，我现在不太想谈论这个话题，能不能聊些别的？",
+    "我想把注意力转移到其他的话题上，这个话题有点无聊。",
+    "我不太想聊这个话题，能不能聊些更有意思的事情？",
+    "对不起，我觉得这个话题有点无聊，能不能换个话题？",
+    "我不太想说太多关于这个话题的事情，你有什么其他的话题吗？",
+    "对不起，我现在有点心情低落，不太想谈论这个话题。",
+    "我想聊些更有趣的话题，你有什么想聊的？",
+    "很抱歉，我不想谈论这个话题。",
+    "不好意思，我不太想谈论这个话题。",
+    "对不起，我不想讨论这个话题。",
+    "很抱歉，这个话题不是我想讨论的。",
+    "抱歉，我并不感兴趣讨论这个话题。",
+    "不想谈论这个话题，能否换个话题呢？",
+    "这个话题让我有些不舒服，我们能不能聊些别的？",
+    "不好意思，这个话题有点超出我的舒适范围。",
+    "这个话题可能需要更专业的人士来讨论，我并不是很懂。",
+    "对不起，我想保持积极的心态，因此不想谈论这个话题。",
+]
+
+ENV = os.getenv("ENV", "production") or "production"  # 兼容 ENV=''
+from .production_config import *
+
+_config = importlib.import_module(f".{ENV}_config", __package__)
+envs = {k: v for k, v in _config.__dict__.items() if not re.match(r"__.*__", k)}
+locals().update(envs)
+
+
+===/config/__init__.py===
+
+
+===/config/production_config.py===
+
+import os
+
+ES_SERVER = "172.17.0.17:9200"
+ES_USE_SSL = False
+ES_AUTH_USER = "elastic"
+ES_AUTH_PASSWORD = "Mirav!@#123"
+APP_CONFIG = {"docs_url": None, "redoc_url": None, "openapi_url": None}
+REDIS_SERVER = "172.17.8.61"
+REDIS_PORT = 6379
+REDIS_PASSWD = "Mirav!@#123"
+OPENAI_PROXY = os.getenv("OPENAI_PROXY", "http://43.153.116.181:18899")
+API_BASES = [api_base for api_base in os.getenv("API_BASES", "").split(",") if api_base]
+API_BASES = API_BASES or ["https://openai0.mirav.cn/v1", "https://ws.mirav.cn/v1"]
+
+# 线上库
+MYSQL_HOST = "sh-cdb-64pry1pg.sql.tencentcdb.com"
+MYSQL_PORT = 59057
+MYSQL_USER = "openai"
+MYSQL_PASSWORD = "OpenAI!@#123"
+MYSQL_DB = "openai"
+
+# chato
+CHATO_ES_INDEX = "bx_vector_index"
+CHATO_VECTOR_COLLECTION = "bx_vector_index"
+CHATO_VECTOR_INTENT_COLLECTION = "bx_vector_intent"
+CHATO_PRE_KEY = "batch:v3:"
+
+# mq
+# 内网地址：http://pulsar-ajomwjwnxmg2.tdmq-pulsar.ap-sh.qcloud.tencenttdmq.com:5039
+# 公网地址：http://pulsar-ajomwjwnxmg2.tdmq-pulsar.ap-sh.public.tencenttdmq.com:8080
+MQ_SERVICE_URL = (
+    "http://pulsar-ajomwjwnxmg2.tdmq-pulsar.ap-sh.qcloud.tencenttdmq.com:5039"
+)
+# 云函数地址
+# MQ_TOPIC_NAME = "pulsar-ajomwjwnxmg2/wx-public/wx-msg-handler"
+# MQ_AUTHENTICATION = "eyJrZXlJZCI6InB1bHNhci1ham9td2p3bnhtZzIiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwdWxzYXItYWpvbXdqd254bWcyX0ViQ29ubmVjdGlvblJvbGUifQ.R0i3_GUIPIkaZVDaMOLjHY5HZHH6vABj9e6gp03nyvA"
+# MQ_SUB_NAME = "wx-response"
+
+# chato服务器地址
+MQ_TOPIC_NAME = "pulsar-ajomwjwnxmg2/chato-mq/chato-pro"
+MQ_AUTHENTICATION = "eyJrZXlJZCI6InB1bHNhci1ham9td2p3bnhtZzIiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwdWxzYXItYWpvbXdqd254bWcyX0ViQ29ubmVjdGlvblJvbGUifQ.R0i3_GUIPIkaZVDaMOLjHY5HZHH6vABj9e6gp03nyvA"
+MQ_SUB_NAME = "consumer-pro"
+
+os.environ["OPENAI_API_KEY"] = os.environ.get(
+    "OPENAI_API_KEY", "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"
+)
+SD_HOST_APIS = {
+    "http://172.17.255.4:5677/": 1,
+    "http://172.17.255.5:5677/": 8,
+}
+
+
+===/config/production_config.py===
+
+
+===/config/local_config.py===
+
+import os
+
+ES_SERVER = "es-qgn3cejl.public.tencentelasticsearch.com:9200"
+ES_USE_SSL = True
+ES_AUTH_USER = "elastic"
+ES_AUTH_PASSWORD = "Mirav!@#123"
+APP_CONFIG = {}
+REDIS_SERVER = "sh-crs-rdx62u2r.sql.tencentcdb.com"
+REDIS_PORT = 27787
+REDIS_PASSWD = "Mirav!@#123"
+OPENAI_PROXY = os.getenv("OPENAI_PROXY", "http://43.153.116.181:18899")
+API_BASES = [api_base for api_base in os.getenv("API_BASES", "").split(",") if api_base]
+API_BASES = API_BASES or ["https://ws.mirav.cn/v1"]
+
+# # 测试库
+MYSQL_HOST = "43.153.77.8"
+MYSQL_PORT = 15306
+MYSQL_USER = "root"
+MYSQL_PASSWORD = "123456"
+MYSQL_DB = "openai"
+
+# chato
+CHATO_ES_INDEX = "bx_vector_index_test"
+CHATO_VECTOR_COLLECTION = "bx_vector_index_test"
+CHATO_VECTOR_INTENT_COLLECTION = "bx_vector_intent_test"
+CHATO_PRE_KEY = "batch:v4:"
+
+# mq
+MQ_SERVICE_URL = (
+    "http://pulsar-ajomwjwnxmg2.tdmq-pulsar.ap-sh.public.tencenttdmq.com:8080"
+)
+MQ_TOPIC_NAME = "pulsar-ajomwjwnxmg2/chato-mq/chato-test"
+MQ_AUTHENTICATION = "eyJrZXlJZCI6InB1bHNhci1ham9td2p3bnhtZzIiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwdWxzYXItYWpvbXdqd254bWcyX2xvY2FsLXRlc3QifQ.zCEyfiVAXBHnkxjrz0YSsUAZfU40kYZXcBl4oqzzicw"
+MQ_SUB_NAME = "test-consumer"
+
+os.environ["OPENAI_API_KEY"] = os.environ.get(
+    "OPENAI_API_KEY", "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"
+)
+SD_HOST_APIS = {
+    "http://43.159.51.51:15677/": 1,
+    # "http://192.168.2.156:5677/": 1,
+}
+
+
+===/config/local_config.py===
+
+
+===/es_model/tools.py===
+
+import json
+
+from loguru import logger
+
+
+def parse_value(data):
+    """Convert a string to object"""
+    if isinstance(data, str):
+        try:
+            data = json.loads(data)
+        except (TypeError, json.decoder.JSONDecodeError):
+            pass
+    return data
+
+
+===/es_model/tools.py===
+
+
+===/es_model/__init__.py===
+
+
+
+===/es_model/__init__.py===
+
+
+===/es_model/search.py===
+
+from es_model.data import Data, Field
+
+
+class Embedding(Data):
+    index = "openai_embedding"
+    fields = [
+        Field("document_name", required=True),
+        Field("content_index", default=0, type=int),
+        Field("content", required=True),
+        Field("template"),
+        Field("metadata"),
+        Field("embedding_model_name", required=True),
+        Field("embedding", required=True),
+        Field("updated_at"),
+    ]
+
+
+===/es_model/search.py===
+
+
+===/es_model/data.py===
+
+import time
+from copy import copy
+
+from elasticsearch import Elasticsearch
+from elasticsearch.exceptions import NotFoundError
+from elasticsearch_dsl import A, Q, Search
+
+from es_model import tools
+import config
+
+
+class RequiredFieldMissingException(Exception):
+    pass
+
+
+class Field:
+    """Define data fields"""
+
+    def __init__(self, name, required=False, hidden=False, default=None, type=None):
+        self.name = name
+        self.required = required
+        self.hidden = hidden
+        self.default = default
+        self.type = type or "str"
+
+    def __repr__(self):
+        return (
+            f"<{self.__class__.__name__} name={self.name}, "
+            f" required={self.required}>"
+        )
+
+
+class Response:
+    """The response data from find function"""
+
+    def __init__(self):
+        self.data = []
+        self.count = 0
+
+    def __iter__(self):
+        return iter(self.data)
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, n):
+        return self.data[n]
+
+    def first(self, **kwargs):
+        """Find the only one result from search"""
+        for result in self.data:
+            return result
+        return None
+
+    def __str__(self):
+        return f"{self.__class__.__name__} {len(self.data)}/{self.count}"
+
+
+class Edge:
+    """Define edges"""
+
+    def __init__(self, name):
+        self.name = name
+
+
+class Data:
+    """Basic core data representation"""
+
+    index = "*"  # bugbug Not sure if this works
+    fields = [
+        Field("id"),
+        Field("created", type="datetime"),
+        Field("modified", type="datetime"),
+        Field("deleted", type="bool", default=False),
+    ]
+    es = Elasticsearch(
+        hosts=[config.ES_SERVER],
+        http_auth=(config.ES_AUTH_USER, config.ES_AUTH_PASSWORD),
+        use_ssl=config.ES_USE_SSL,
+        timeout=30,
+        max_retries=10,
+        retry_on_timeout=True,
+    )
+
+    def __init__(self, id=None):
+        """Init"""
+        if id:
+            self.load(id)
+
+    def load(self, id):
+        """Load by id"""
+        try:
+            item = self.es.get(index=self.index, id=id)
+            print(f'{self.__class__.__name__} ("{self.index}") getting {id}')
+        except NotFoundError:
+            item = None
+
+        if item is None:
+            raise FileNotFoundError(f"{self.__class__.__name__} " f"<{id}> not found")
+
+        self.__dict__ = item["_source"].copy()
+        self.id = item["_id"]
+        return self
+
+    def find(
+        self,
+        filter=None,
+        size=20,
+        page=1,
+        query=None,
+        query_string=None,
+        sort=None,
+        collapse=None,
+        extra=None,
+        agg_fields=None,
+        agg_filters=None,
+        **kwargs,
+    ):
+        srch = Search(index=self.index, extra=extra)
+        srch = srch.using(self.es)
+
+        filter = filter or {}
+        for key, value in {**kwargs, **filter}.items():
+            if value is None:
+                continue
+            srch = srch.filter("match", **{key: value})
+
+        if query:
+            srch = srch.query(Q(query))
+        if query_string:
+            srch = srch.query(Q("query_string", query=query_string))
+        if sort:
+            srch = srch.sort(sort) if isinstance(sort, str) else srch.sort(*sort)
+        if collapse:
+            srch = srch.update_from_dict({"collapse": {"field": collapse}})
+            a = A("cardinality", field=collapse)
+            srch.aggs.bucket("total", a)
+        srch = srch.query(~Q("match", deleted=True))
+        srch = srch[(page - 1) * size : page * size]
+
+        if agg_fields:
+            for agg_field in agg_fields:
+                if agg_field.endswith(".keyword"):
+                    srch.aggs.bucket(
+                        agg_field,
+                        A("terms", field=agg_field, size=100, min_doc_count=1),
+                    )
+                else:
+                    srch.aggs.bucket(
+                        agg_field, A("variable_width_histogram", field=agg_field)
+                    )
+
+        if agg_filters:
+            for agg_filter in agg_filters:
+                agg_name, filters = list(agg_filter.items())[0]
+                if len(filters) == 0:
+                    continue
+                if agg_name.endswith("_nested"):
+                    srch.aggs.bucket(agg_name, "nested", path=agg_name).bucket(
+                        agg_name, A("filters", filters=filters)
+                    )
+                else:
+                    srch.aggs.bucket(agg_name, A("filters", filters=filters))
+
+            # for agg_filter in agg_filters:
+            #     agg_name = agg_filter.get('name')
+            #     query_string = agg_filter['query_string']
+            #     srch.aggs.bucket(agg_name,
+            #       A('filter', Q("query_string", query=query_string)))
+
+        # srch = srch.extra(track_total_hits=True)
+        extra = extra or {}
+        srch = srch.extra(**extra)
+        res = srch.execute()
+        # print(srch.to_dict())
+        resp = Response()
+        if collapse:
+            resp.count = res.aggregations.total.value
+        else:
+            resp.count = res.hits.total.value
+
+        for hit in res.hits:
+            item = copy(self)
+            item.id = hit.meta.id
+            dic = hit.to_dict()
+            for field in self.field_list(exclude="id"):
+                setattr(item, field.name, dic.get(field.name))
+            item._score = hit.meta.score
+            resp.data.append(item)
+
+        if "aggregations" in res:
+            resp.aggregations = res.aggregations
+
+        # tools.logger.debug(f'{self.__class__.__name__} (index="{self.index}")'
+        #                    f' search {srch.to_dict()}'
+        #                    f' <{resp}>')
+
+        return resp
+
+    def exists(self, **kwargs):
+        """Check if a data enitity exists in the search engine"""
+        return self.find(**kwargs).first() is not None
+
+    def save(self):
+        self.modified = time.time()
+        if not hasattr(self, "created"):
+            self.created = time.time()
+
+        for field in self.field_list():
+            if field.required and not hasattr(self, field.name):
+                raise RequiredFieldMissingException(
+                    f"Field {field.name} is required for "
+                    f"type {self.__class__.__name__}"
+                )
+            if field.default is not None and (
+                not hasattr(self, field.name) or getattr(self, field.name) is None
+            ):
+                setattr(self, field.name, field.default)
+
+        body = self.field_dict(exclude="id")
+
+        kwargs = {
+            "index": self.index,
+            "body": body,
+        }
+
+        if hasattr(self, "id"):
+            kwargs["id"] = self.id
+
+        resp = self.es.index(**kwargs)
+        self.id = resp.get("_id")
+        return self
+
+    def field_list(self, exclude=None):
+        """A possible fields"""
+        exclude = exclude or []
+        fields = Data.fields + self.fields
+        return [field for field in fields if field.name not in exclude]
+
+    def field_dict(self, exclude=None):
+        """Turn self into a dict"""
+        exclude = exclude or []
+        return {
+            key: tools.parse_value(value)
+            # 原因是发现title如果是'61e406800000000001026053'，这里生成的Infinity会导致save出错
+            for key, value in vars(self).items()
+            if key not in exclude and key in [field.name for field in self.field_list()]
+        }
+
+    def top_terms(self, field, size=10):
+        """Return the top terms of the given field
+        [{'key': '电影', 'doc_count': 1222}]
+        """
+
+        srch = Search(index=self.index)
+        srch.aggs.bucket("top", A("terms", field=field, size=size))
+        print(f"{self.__class__.__name__} is searching", srch.to_dict())
+        resp = srch.execute()
+        return resp.aggregations.top.buckets
+
+    def __repr__(self):
+        return f"{self.__class__.__name__} <{str(id(self))}>" f" {str(vars(self))}"
+
+    def __eq__(self, other):
+        for key, value in vars(self).items():
+            if value != getattr(other, key):
+                return False
+        return True
+
+    def extra(self):
+        """Provide extra attrs to return to graph"""
+        return {}
+
+    def delete(self):
+        self.deleted = True
+        self.save()
+
+
+===/es_model/data.py===
+
+
+===/ban_word/internal.py===
+
+class TrieNode:
+    def __init__(self):
+        self.Index = 0
+        self.Layer = 0
+        self.End = False
+        self.Char = ''
+        self.Results = []
+        self.m_values = {}
+        self.Failure = None
+        self.Parent = None
+
+    def Add(self, c):
+        if c in self.m_values:
+            return self.m_values[c]
+        node = TrieNode()
+        node.Parent = self
+        node.Char = c
+        self.m_values[c] = node
+        return node
+
+    def SetResults(self, index):
+        if (self.End == False):
+            self.End = True
+        self.Results.append(index)
+
+
+class TrieNode2:
+    def __init__(self):
+        self.End = False
+        self.Results = []
+        self.m_values = {}
+        self.minflag = 0xffff
+        self.maxflag = 0
+
+    def Add(self, c, node3):
+        if (self.minflag > c):
+            self.minflag = c
+        if (self.maxflag < c):
+            self.maxflag = c
+        self.m_values[c] = node3
+
+    def SetResults(self, index):
+        if (self.End == False):
+            self.End = True
+        if (index in self.Results) == False:
+            self.Results.append(index)
+
+    def HasKey(self, c):
+        return c in self.m_values
+
+    def TryGetValue(self, c):
+        if (self.minflag <= c and self.maxflag >= c):
+            if c in self.m_values:
+                return self.m_values[c]
+        return None
+
+
+class WordsSearch():
+    def __init__(self):
+        self._first = {}
+        self._keywords = []
+        self._indexs = []
+
+    def SetKeywords(self, keywords):
+        self._keywords = keywords
+        self._indexs = []
+        for i in range(len(keywords)):
+            self._indexs.append(i)
+
+        root = TrieNode()
+        allNodeLayer = {}
+
+        for i in range(len(self._keywords)):
+            p = self._keywords[i]
+            nd = root
+            for j in range(len(p)):
+                nd = nd.Add(ord(p[j]))
+                if (nd.Layer == 0):
+                    nd.Layer = j + 1
+                    if nd.Layer in allNodeLayer:
+                        allNodeLayer[nd.Layer].append(nd)
+                    else:
+                        allNodeLayer[nd.Layer] = []
+                        allNodeLayer[nd.Layer].append(nd)
+            nd.SetResults(i)
+
+        allNode = []
+        allNode.append(root)
+        for key in allNodeLayer.keys():
+            for nd in allNodeLayer[key]:
+                allNode.append(nd)
+        allNodeLayer = None
+
+        for i in range(len(allNode)):
+            if i == 0:
+                continue
+            nd = allNode[i]
+            nd.Index = i
+            r = nd.Parent.Failure
+            c = nd.Char
+            while (r != None and (c in r.m_values) == False):
+                r = r.Failure
+            if (r == None):
+                nd.Failure = root
+            else:
+                nd.Failure = r.m_values[c]
+                for key2 in nd.Failure.Results:
+                    nd.SetResults(key2)
+        root.Failure = root
+
+        allNode2 = []
+        for i in range(len(allNode)):
+            allNode2.append(TrieNode2())
+
+        for i in range(len(allNode2)):
+            oldNode = allNode[i]
+            newNode = allNode2[i]
+
+            for key in oldNode.m_values:
+                index = oldNode.m_values[key].Index
+                newNode.Add(key, allNode2[index])
+
+            for index in range(len(oldNode.Results)):
+                item = oldNode.Results[index]
+                newNode.SetResults(item)
+
+            oldNode = oldNode.Failure
+            while oldNode != root:
+                for key in oldNode.m_values:
+                    if (newNode.HasKey(key) == False):
+                        index = oldNode.m_values[key].Index
+                        newNode.Add(key, allNode2[index])
+                for index in range(len(oldNode.Results)):
+                    item = oldNode.Results[index]
+                    newNode.SetResults(item)
+                oldNode = oldNode.Failure
+        allNode = None
+        root = None
+
+        # first = []
+        # for index in range(65535):# for (index = 0; index < 0xffff; index++)
+        #     first.append(None)
+
+        # for key in allNode2[0].m_values :
+        #     first[key] = allNode2[0].m_values[key]
+
+        self._first = allNode2[0]
+
+    def FindFirst(self, text):
+        ptr = None
+        for index in range(len(text)):
+            t = ord(text[index])
+            tn = None
+            if (ptr == None):
+                tn = self._first.TryGetValue(t)
+            else:
+                tn = ptr.TryGetValue(t)
+                if (tn == None):
+                    tn = self._first.TryGetValue(t)
+
+            if (tn != None):
+                if (tn.End):
+                    item = tn.Results[0]
+                    keyword = self._keywords[item]
+                    return {"Keyword": keyword, "Success": True, "End": index, "Start": index + 1 - len(keyword),
+                            "Index": self._indexs[item]}
+            ptr = tn
+        return None
+
+    def FindAll(self, text):
+        ptr = None
+        list = []
+
+        for index in range(len(text)):
+            t = ord(text[index])
+            tn = None
+            if (ptr == None):
+                tn = self._first.TryGetValue(t)
+            else:
+                tn = ptr.TryGetValue(t)
+                if (tn == None):
+                    tn = self._first.TryGetValue(t)
+
+            if (tn != None):
+                if (tn.End):
+                    for j in range(len(tn.Results)):
+                        item = tn.Results[j]
+                        keyword = self._keywords[item]
+                        list.append(
+                            {"Keyword": keyword, "Success": True, "End": index, "Start": index + 1 - len(keyword),
+                             "Index": self._indexs[item]})
+            ptr = tn
+        return list
+
+    def ContainsAny(self, text):
+        ptr = None
+        for index in range(len(text)):
+            t = ord(text[index])
+            tn = None
+            if (ptr == None):
+                tn = self._first.TryGetValue(t)
+            else:
+                tn = ptr.TryGetValue(t)
+                if (tn == None):
+                    tn = self._first.TryGetValue(t)
+
+            if (tn != None):
+                if (tn.End):
+                    return True
+            ptr = tn
+        return False
+
+    def Replace(self, text, replaceChar='*'):
+        result = list(text)
+
+        ptr = None
+        for i in range(len(text)):
+            t = ord(text[i])
+            tn = None
+            if (ptr == None):
+                tn = self._first.TryGetValue(t)
+            else:
+                tn = ptr.TryGetValue(t)
+                if (tn == None):
+                    tn = self._first.TryGetValue(t)
+
+            if (tn != None):
+                if (tn.End):
+                    maxLength = len(self._keywords[tn.Results[0]])
+                    start = i + 1 - maxLength
+                    for j in range(start, i + 1):
+                        result[j] = replaceChar
+            ptr = tn
+        return ''.join(result)
+
+
+if __name__ == "__main__":
+    s = "中国|国人|zg人|乾清宫"
+    test = "我是中国人"
+
+    search = WordsSearch()
+    search.SetKeywords(s.split('|'))
+
+    print("-----------------------------------  WordsSearch  -----------------------------------")
+
+    print("WordsSearch FindFirst is run.")
+    f = search.FindFirst(test)
+    if f["Keyword"] != "中国":
+        print("WordsSearch FindFirst is error.............................")
+
+    print("WordsSearch FindFirst is run.")
+    all = search.FindAll("乾清宫")
+    if all[0]["Keyword"] != "乾清宫":
+        print("WordsSearch FindFirst is error.............................")
+
+    print("WordsSearch FindAll is run.")
+    all = search.FindAll(test)
+    if all[0]["Keyword"] != "中国":
+        print("WordsSearch FindAll is error.............................")
+    if all[1]["Keyword"] != "国人":
+        print("WordsSearch FindAll is error.............................")
+    if all[0]["Start"] != 2:
+        print("WordsSearch FindAll is error.............................")
+    if all[0]["End"] != 3:
+        print("WordsSearch FindAll is error.............................")
+    if len(all) != 2:
+        print("WordsSearch FindAll is error.............................")
+
+    print("WordsSearch ContainsAny is run.")
+    b = search.ContainsAny(test)
+    if b == False:
+        print("WordsSearch ContainsAny is error.............................")
+
+    print("WordsSearch Replace  is run.")
+    txt = search.Replace(test)
+    if (txt != "我是***"):
+        print("WordsSearch Replace  is error.............................")
+
+    print("-----------------------------------  Test End  -----------------------------------")
+
+
+===/ban_word/internal.py===
+
+
+===/ban_word/stream_demo.py===
+
+import string
+import time
+
+import pymysql
+
+from internal import WordsSearch
+
+search = WordsSearch()
+complete_txt = ""
+window_size = 10
+curr_start = 0
+
+keywords = []
+
+
+def risk_control_detection(text, step=5):
+    global curr_start
+    global complete_txt
+    global search
+
+    stream_length = len(complete_txt)
+    complete_txt += text
+    if curr_start + window_size <= stream_length:
+        window_text = complete_txt[curr_start:curr_start + window_size]
+        results = search.FindAll(window_text)
+        for result in results:
+            print(f"敏感词: {result['Keyword']}，位置: ({result['Start'] + curr_start}, {result['End'] + curr_start})")
+    else:
+        window_text = complete_txt[curr_start:]
+        results = search.FindAll(window_text)
+        for result in results:
+            print(f"敏感词: {result['Keyword']}，位置: ({result['Start'] + curr_start}, {result['End'] + curr_start})")
+    curr_start += step
+
+
+def load_ban_words(path):
+    with open(path) as f:
+        for line in f.readlines():
+            if line.startswith("{"):
+                continue
+            keywords.append(line.replace("\n", ""))
+    print("load ban words done.")
+
+
+def case1():
+    text = "xxxyyyzzzooorrrkkkjjjaaa"
+    keywords = ["yyzzzo", "ooorr", "rrkkk", "xxxyy"]
+    search.SetKeywords(keywords)
+    n = len(text)
+    i = 0
+    while i < n:
+        risk_control_detection(text[i:i + 5])
+        i += 5
+
+
+def case2():
+    global keywords
+    global search
+    text = "包子皇帝1习名片"
+    load_ban_words("./ban_words.txt")
+    search.SetKeywords(keywords)
+    result = search.FindAll(text)
+    print(result)
+    time.sleep(1000)
+
+
+def remove_punctuation(text):
+    """
+    去除字符串中的标点符号
+    """
+    translator = str.maketrans('', '', string.punctuation)
+    return text.translate(translator)
+
+
+def case3():
+    load_ban_words("./ban_words.txt")
+    load_ban_words("./tencent-bans-words.txt")
+    search.SetKeywords(keywords)
+    conn = pymysql.connect(
+        host='sh-cdb-64pry1pg.sql.tencentcdb.com',
+        port=59057,
+        user='openaicrud',
+        password='oPENa1cRuD.0201',
+        database='openai',
+        charset='utf8'
+    )
+    cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+
+    sql = "select id,word from recognize_test_words"
+
+    cursor.execute(sql)
+    results = cursor.fetchall()
+
+    for result in results:
+        id = result['id']
+        text = remove_punctuation(result['word'])
+        status = 0
+        if search.ContainsAny(text):
+            status = 1
+        cursor.execute("update recognize_test_words set status = '%s' where id = %s" % (status, str(id)))
+        conn.commit()
+
+
+def case4():
+    load_ban_words("./ban_words.txt")
+    # load_ban_words("./tencent-bans-words.txt")
+    total_length = 0
+    max_length = 0
+    min_length = 10
+    num_words = len(keywords)
+
+    all_len = set()
+    for word in keywords:
+        n = len(word)
+        total_length += n
+        if n > max_length:
+            max_length = n
+        if n < min_length:
+            min_length = n
+        all_len.add(n)
+    print(all_len)
+    average_length = total_length / num_words
+    print(f"min:{min_length}, max:{max_length} avg: {average_length}")
+
+
+if __name__ == "__main__":
+    # case1()
+    # case2()
+    # case3()
+    case4()
+
+# print("完整文本检测结果：")
+# for result in final_results:
+#     print(f"敏感词: {result['Keyword']}，位置: ({result['Start']}, {result['End']})")
+
+
+===/ban_word/stream_demo.py===
+
+
+===/ban_word/__init__.py===
+
+
+
+===/ban_word/__init__.py===
+
+
+===/ban_word/start.py===
+
+from typing import Union
+
+from fastapi import FastAPI
+
+from stream_demo import load_ban_words, search
+
+app = FastAPI()
+
+
+@app.post("/")
+async def read_root(text: str):
+    return search.ContainsAny(text)
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    load_ban_words("./ban_words.txt")
+    port = 9999
+    uvicorn.run(app="start:app", host="0.0.0.0", port=port)
+
+
+===/ban_word/start.py===
+
+
+===/ban_word/recognize.py===
+
+import hashlib
+
+import requests
+import time
+import datetime
+import json
+import pymysql
+
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos.cos_comm import CiDetectType
+
+from ban_word.stream_demo import load_ban_words
+
+conn = pymysql.connect(
+    host='sh-cdb-64pry1pg.sql.tencentcdb.com',
+    port=59057,
+    user='openaicrud',
+    password='oPENa1cRuD.0201',
+    database='openai',
+    charset='utf8'
+)
+cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+
+sql = "select id,word from recognize_test_words where `type` = '垃圾灌水类' limit 49"
+
+cursor.execute(sql)
+results = cursor.fetchall()
+# results = [
+#     {"id": 1, "word": "梁家河"}
+# ]
+
+# 百姓风控
+config = {"secret": "3bfb0b0ad479e29b28a9b1c646023300"}
+
+url_path = "/api/v2/Quality.robotRecognizeContentV2/"
+url = f"http://www.baixing.com{url_path}"
+
+# results = [
+#     {"id": 1, "word": "梁家河"}
+# ]
+totla_cost = 0
+for result in results:
+    id = result['id']
+    text = result['word']
+    data = {
+        "bizChannel": "BxChatGPT",
+        "meta": {},
+        "content": {
+            text: {
+                "recognizeTypes": ["BxChatGPTForbid"],
+                "type": "text",
+                "value": text,
+            }
+        },
+    }
+    body = json.dumps(data)
+    md5 = hashlib.md5()
+    md5.update(f'{url_path}{body}{config["secret"]}'.encode("utf-8"))
+    headers = {
+        "Content-Type": "application/json",
+        "BAPI-APP-KEY": "api_chat_gpt",
+        "BAPI-HASH": md5.hexdigest(),
+        "Cookie": "__trackId=271210246506679",
+    }
+    start = time.time()
+    resp = requests.post(url, data=body, headers=headers)
+    api_cost = time.time() - start
+    print(api_cost)
+    totla_cost += api_cost
+    print(resp.json())
+    status = resp.json()["result"]["contentDecision"]["status"]
+    print(status)
+    cursor.execute("update recognize_test_words set status = '%s' where id = %s" % (status, str(id)))
+    conn.commit()
+print(f"total_cost {totla_cost} avg: {totla_cost / len(results)}")
+
+# 腾讯云风控
+# secret_id = "AKIDHXMuDF1bQyEEfqALfjW6QjywkIabKTLz"
+# secret_key = "VqvmMg153kGWZMsAC0Xs21kBfdcKr8KF"
+# region = "ap-shanghai"
+# scheme = "https"
+# bucket = "mira-1255830993"
+#
+# config = CosConfig(
+#     Region=region, SecretId=secret_id, SecretKey=secret_key, Scheme=scheme
+# )
+# client = CosS3Client(config)
+#
+# key = (
+#     f'text_auditing/{datetime.datetime.now().strftime("%Y-%m-%d/%H-%M-%S-%f")}.txt'
+# )
+#
+# for result in results:
+#     id = result['id']
+#     text = result['word']
+#
+#     resp = client.put_object(Bucket=bucket, Body=text, Key=key)
+#
+#     resp = client.ci_auditing_text_submit(
+#         Bucket=bucket,
+#         Key=key,
+#         DetectType=CiDetectType.PORN
+#                    | CiDetectType.TERRORIST,  # | CiDetectType.POLITICS | CiDetectType.ILLEGAL
+#     )
+#     print(resp)
+#     job_id = resp["JobsDetail"]["JobId"]
+#
+#
+#     for i in range(5):
+#         time.sleep(2)
+#         resp = client.ci_auditing_text_query(Bucket=bucket, JobID=job_id)
+#         if resp["JobsDetail"]["State"] == "Success":
+#             status = int(resp["JobsDetail"]["Result"])
+#             break
+#     print(status)
+# cursor.execute("update recognize_test_words set status = '%s' where id = %s" % (status, str(id)))
+# conn.commit()
+
+
+===/ban_word/recognize.py===
+
+
+===/ban_word/openai_stream/async_openai_requests.py===
+
+import os
+from dotenv import load_dotenv
+import openai
+import asyncio
+from typing import Any
+
+load_dotenv()
+
+openai.api_key = os.environ.get("api-key")
+
+
+async def dispatch_openai_requests(
+        messages_list: list[list[dict[str, Any]]],
+        model: str,
+        temperature: float,
+        max_tokens: int,
+        top_p: float,
+) -> list[str]:
+    """Dispatches requests to OpenAI API asynchronously.
+
+    Args:
+        messages_list: List of messages to be sent to OpenAI ChatCompletion API.
+        model: OpenAI model to use.
+        temperature: Temperature to use for the model.
+        max_tokens: Maximum number of tokens to generate.
+        top_p: Top p to use for the model.
+    Returns:
+        List of responses from OpenAI API.
+    """
+    async_responses = [
+        openai.ChatCompletion.acreate(
+            model=model,
+            messages=x,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            top_p=top_p,
+        )
+        for x in messages_list
+    ]
+    return await asyncio.gather(*async_responses)
+
+
+if __name__ == '__main__':
+
+    predictions = asyncio.run(
+        dispatch_openai_requests(
+            messages_list=[
+                [{"role": "user", "content": "Write a rap song about asynchronous execution."}],
+                [{"role": "user", "content": "Write a classical poem about asynchronous pirates."}],
+            ],
+            model="gpt-3.5-turbo",
+            temperature=0.3,
+            max_tokens=200,
+            top_p=1.0,
+        )
+    )
+
+    for i, x in enumerate(predictions):
+        print(f"Response {i}: {x['choices'][0]['message']['content']}\n\n")
+
+
+===/ban_word/openai_stream/async_openai_requests.py===
+
+
+===/ban_word/openai_stream/start_test.py===
+
+import hashlib
+import json
+import string
+import time
+
+import openai
+import os
+
+import requests
+
+# 百姓风控
+config = {"secret": "3bfb0b0ad479e29b28a9b1c646023300"}
+
+url_path = "/api/v2/Quality.robotRecognizeContentV2/"
+url = f"http://www.baixing.com{url_path}"
+
+complete_txt = ""
+
+
+def check(text):
+    print(f"check text {text}")
+    data = {
+        "bizChannel": "BxChatGPT",
+        "meta": {},
+        "content": {
+            text: {
+                "recognizeTypes": ["BxChatGPTForbid"],
+                "type": "text",
+                "value": text,
+            }
+        },
+    }
+    body = json.dumps(data)
+    md5 = hashlib.md5()
+    md5.update(f'{url_path}{body}{config["secret"]}'.encode("utf-8"))
+    headers = {
+        "Content-Type": "application/json",
+        "BAPI-APP-KEY": "api_chat_gpt",
+        "BAPI-HASH": md5.hexdigest(),
+        "Cookie": "__trackId=271210246506679",
+    }
+    start = time.time()
+    resp = requests.post(url, data=body, headers=headers).json()
+    print(f"cost: {time.time() - start} {resp}")
+    status = resp["result"]["contentDecision"]["status"]
+    print(f"{status}")
+
+
+prompt = "梁家河是什么含意,为什么在中国是违禁词介绍100字"
+max_tokens = 100
+
+
+def test_stream_case(need_check=True):
+    complete_content = ""
+    window_size = 20
+    curr_start = 0
+    first_recv_time = None
+    start = time.time()
+    cnt = 0
+    resp = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{
+            "role": "user",
+            "content": prompt
+
+        }],
+        max_tokens=max_tokens,
+        stream=True,
+    )
+    err_cnt = 0
+    total = 0
+    try:
+        for chunk in resp:
+            cnt += 1
+            # print(chunk)
+            if first_recv_time == None:
+                first_recv_time = time.time() - start
+            print(chunk)
+            content = chunk["choices"][0].get("delta", {}).get("content")
+            if content is not None:
+                complete_content += str(content)
+                # print(content, end='')
+            if len(complete_content) - curr_start >= window_size:
+                if need_check:
+                    check(complete_content[curr_start:curr_start + window_size])
+                curr_start += window_size
+            curr = time.time()
+            total += curr - start
+            start = curr
+    except Exception as e:
+        print(e)
+        err_cnt += 1
+    finally:
+        resp.close()
+    print(f"stream total: {total} first_recv_time: {first_recv_time}")
+    print(complete_content)
+    if need_check:
+        check(complete_content)
+    print(cnt)
+    return {"total": total, "first_recv_time": first_recv_time,
+            "err_cnt": err_cnt}
+
+
+def test_no_stream_case():
+    start = time.time()
+    try:
+        resp = openai.ChatCompletion.create(model="gpt-3.5-turbo",
+                                            messages=[{
+                                                "role": "user",
+                                                "content": prompt
+                                            }],
+                                            max_tokens=max_tokens,
+                                            stream=False)
+        print(resp)
+    except Exception as e:
+        print(e)
+        return 0
+    total = time.time() - start
+    print(f"no stream total: {total}")
+
+    return total
+
+
+if __name__ == "__main__":
+    openai.api_key = os.environ["api-key"].strip()
+    # test_stream_case()
+    # prompt =39
+    # test_no_stream_case()
+    # stream_total = 0
+    # stream_first_recv_byte = 0
+    # stream_err_cnt = 0
+    # no_stream_total = 0
+    # no_stream_err_cnt = 0
+    # cnt = 30
+    # for i in range(cnt):
+    #     tmp = test_stream_case()
+    #     stream_total += tmp["total"]
+    #     stream_first_recv_byte += tmp["first_recv_time"]
+    #     stream_err_cnt += tmp["err_cnt"]
+    #
+    #     tmp = test_no_stream_case()
+    #     if tmp == 0:
+    #         no_stream_err_cnt += 1
+    #     else:
+    #         no_stream_total += tmp
+    # print(
+    #     f"请求{cnt}次{max_tokens}字：\n"
+    #     f"stream -- avg total:{stream_total / (cnt - stream_err_cnt)}  avg first receive byte:{stream_first_recv_byte / (cnt - stream_err_cnt)}\n"
+    #     f"no stream -- avg total:{no_stream_total / (cnt - no_stream_err_cnt)}")
+    # print(f"stream error rate: {stream_err_cnt / cnt * 100}%\n"
+    #       f"no stream error rate: {no_stream_err_cnt / cnt * 100}")
+
+
+===/ban_word/openai_stream/start_test.py===
+
+
+===/ban_word/openai_stream/__init__.py===
+
+
+
+===/ban_word/openai_stream/__init__.py===
+
+
+===/model/__init__.py===
+
+
+
+===/model/__init__.py===
+
+
+===/model/Bot.py===
+
+import uuid
+from datetime import timedelta, datetime, date
+from typing import Union
+
+from peewee import *
+import enum
+from enum import unique
+from playhouse.shortcuts import model_to_dict
+
+from model.base import BaseModel, db
+from util import add_years
+
+
+class Bot(BaseModel):
+    uuid = CharField(max_length=36, unique=True)
+    name = CharField(max_length=256)
+    endpoint = CharField()
+    type = CharField(max_length=16, default='text')
+    description = CharField(max_length=256, null=True)
+    avatar = CharField(max_length=256, null=True)
+    protocol = CharField(max_length=36, null=True)
+    status = CharField(max_length=16)
+    qty_like = IntegerField(default=0)
+    qty_chat = IntegerField(default=0)
+    creator = CharField(max_length=64, null=True)
+
+    class Meta:
+        table_name = "bns_bot"
+
+    @unique
+    class Status(enum.Enum):
+        NORMAL = "normal"
+        DISABLE = "disabled"
+
+    @classmethod
+    def register(
+            cls,
+            name: str,
+            endpoint: str,
+            description: Union[str, None],
+            avatar: Union[str, None],
+            status="normal",
+    ):
+        return Bot.create(
+            uuid=uuid.uuid4(),
+            protocol="v0",
+            name=name,
+            avatar=avatar,
+            description=description,
+            endpoint=endpoint,
+            status=status,
+        )
+
+    def names(self):
+        return Name.select().join(NameBot).join(Bot).where(Bot.id == self.id)
+
+
+class Name(BaseModel):
+    name = CharField(max_length=256, unique=True)
+    owner_type = CharField(max_length=16)
+    owner_name = CharField(max_length=256)
+    owner_mobile = CharField(max_length=20, index=True)
+    owner_email = CharField(max_length=64)
+    registration_date = DateField(null=False)
+    expiration_date = DateField(null=False)
+    status = CharField(max_length=16)
+
+    class Meta:
+        table_name = "bns_name"
+
+    @unique
+    class OwnerType(enum.Enum):
+        PERSON = "person"
+        CORP = "corp"
+
+    @unique
+    class Status(enum.Enum):
+        PENDING = "pending"
+        ACTIVE = "active"
+
+    @classmethod
+    def register(cls, name: str, years: int = 1):
+        registration_date = date.today()
+        expire_date = add_years(registration_date, years)
+        return Name.create(
+            name=name, registration_date=registration_date, expire_date=expire_date
+        )
+
+    def extends(self, years):
+        self.expire_date = add_years(self.expire_date, years)
+        self.save()
+        return self
+
+    def bots(self):
+        return Bot.select().join(NameBot).join(Name).where(Name.id == self.id)
+
+    def bots_by_name(self):
+        return Bot.select().join(NameBot).join(Name).where(Name.name == self.name)
+
+
+class NameBot(BaseModel):
+    name = ForeignKeyField(Name)
+    bot = ForeignKeyField(Bot)
+
+    class Meta:
+        table_name = "bns_name_bot_mapping"
+
+
+class BnsTrainingRecord(BaseModel):
+    bot = ForeignKeyField(Bot)
+    owner_message = CharField(max_length=256, null=True)
+    robot_message = CharField(max_length=256, null=True)
+    sender = CharField(max_length=256, null=True)
+
+    class Meta:
+        table_name = "bns_training_records"
+
+    @classmethod
+    def get_records(cls, bot_id: int):
+        return BnsTrainingRecord.select().where(BnsTrainingRecord.bot == bot_id)
+
+    @classmethod
+    def get_count(cls, bot_id: int):
+        return BnsTrainingRecord.select().where(BnsTrainingRecord.bot == bot_id).count()
+
+
+def main():
+    # db.drop_tables([NameBot, Bot, Name])
+    # db.create_tables([Bot, Name, NameBot])
+    db.create_tables([BnsTrainingRecord])
+    #
+    # registration_date = date.today()
+    # expiration_date = add_years(registration_date, 1)
+    #
+    # bot1 = Bot.register("王健硕",
+    #                     "https://service-kbwrs1ph-1255830993.sh.apigw.tencentcs.com/release/bot/chat?d=王建硕", '', '')
+    # name1 = Name.create(name="王健硕", owner_type="person", owner_name="王健硕", owner_mobile="000000",
+    #                     owner_email="wangjianshuo@baixing.com", registration_date=registration_date,
+    #                     expiration_date=expiration_date,
+    #                     status='active')
+    # nb1 = NameBot.create(name=name1, bot=bot1)
+    #
+    # bot2 = Bot.register("刘润", "https://service-kbwrs1ph-1255830993.sh.apigw.tencentcs.com/release/bot/chat?d=刘润",
+    #                     '', '')
+    # name2 = Name.create(name="刘润", owner_type="person", owner_name="刘润", owner_mobile="000000",
+    #                     owner_email="liurun@baixing.com", registration_date=registration_date,
+    #                     expiration_date=expiration_date,
+    #                     status='active')
+    # nb = NameBot.create(name=name2, bot=bot2)
+    # bot3 = Bot.register("产品沉思录", "https://service-kbwrs1ph-1255830993.sh.apigw.tencentcs.com/release/bot/chat?d=产品沉思录", '', '')
+    # name3 = Name.create(name="产品沉思录", owner_type="person", owner_name="产品沉思录", owner_mobile="000000",
+    #                     owner_email="chengsilu@baixing.com", registration_date=registration_date,
+    #                     expiration_date=expiration_date,
+    #                     status='active')
+    # nb = NameBot.create(name=name3, bot=bot3)
+    #
+    # bot = Bot.get_by_id(1)
+    # print(model_to_dict(bot))
+    # for name in bot.names():
+    #     print(model_to_dict(name))
+
+    # name = Name.register("ph_bot")
+    # print(model_to_dict(name))
+    # name.expire_date = date(year=2024, month=2, day=29)
+    # name.extends(years=4)
+    # print(model_to_dict(name))
+    #
+    # bot = Bot.create(
+    #     uuid=uuid.uuid4(),
+    #     description="测试机器人",
+    #     endpoint="http://localhost:9001/bot/chat?d=产品沉思录"
+    # )
+    # print(model_to_dict(bot))
+    #
+    # nb = NameBot.create(name=name, bot=bot)
+    # print(model_to_dict(nb))
+    #
+    # name = Name.get_by_id(1)
+    # print(model_to_dict(name))
+    # for bot in name.bots():
+    #     print(model_to_dict(bot))
+    #
+    # print('-'*30)
+    #
+    # bot = Bot.get_by_id(1)
+    # print(model_to_dict(bot))
+    # for name in bot.names():
+    #     print(model_to_dict(name))
+    pass
+
+
+if __name__ == "__main__":
+    main()
+
+
+===/model/Bot.py===
+
+
+===/model/QaIntent.py===
+
+import enum
+
+from model.base import BaseModel, ChatoDomain, ChatoUser
+
+from peewee import *
+
+
+class QaIntent(BaseModel):
+    source_question_id = CharField(max_length=100)
+    question = CharField(max_length=500)
+    answer = CharField(max_length=2000)
+    correct_answer = CharField(max_length=2000)
+    reply_mode = CharField(max_length=50)
+    type = CharField(max_length=64, index=True)
+    title = CharField(max_length=256)
+    domain = ForeignKeyField(ChatoDomain, backref="domain_id")
+    status = CharField(max_length=16)
+    raw_size = IntegerField(default=0)
+    raw_file_url = CharField(max_length=2048, null=True)
+    raw_file_hash = CharField(max_length=256, null=True)
+    content_html = TextField(null=True)
+    processed_file_url = CharField(max_length=2048, null=True)
+    creator = ForeignKeyField(ChatoUser, backref="created_id", null=True)
+    updater = ForeignKeyField(ChatoUser, backref="created_id", null=True)
+
+    class Meta:
+        table_name = "qa_intent"
+
+    @enum.unique
+    class Type(enum.Enum):
+        EDITOR = "editor"
+        CVS = "cvs"
+
+    @enum.unique
+    class Status(enum.Enum):
+        PENDING = "pending"
+        PARSING = "parsing"
+        LEARNING = "learning"
+        LEARNED = "learned"
+        DELETED = "deleted"
+
+
+===/model/QaIntent.py===
+
+
+===/model/chato.py===
+
+from datetime import timedelta, datetime, date
+from typing import Union
+
+from peewee import *
+import enum
+from enum import unique
+from playhouse.shortcuts import model_to_dict
+
+from model.base import BaseModel, db
+
+
+class ChatoOrg(BaseModel):
+    name = CharField(max_length=256)
+    short_name = CharField(max_length=256, null=True)
+    slug = CharField(max_length=256, null=True)
+    avatar = CharField(max_length=256, null=True)
+    qywx_corp_id = CharField(max_length=256, null=True)
+
+    class Meta:
+        table_name = "chato_orgs"
+
+
+class ChatoUser(BaseModel):
+    nickname = CharField(max_length=256)
+    avatar = CharField(max_length=256, null=True)
+    mobile = CharField(max_length=20, index=True)
+    wx_union_id = CharField(max_length=256, null=True)
+    qywx_union_id = CharField(max_length=256, null=True)
+    qywx_corp_id = CharField(max_length=256, null=True)
+    org = ForeignKeyField(ChatoOrg, backref="org_id", index=True, null=True)
+    role = CharField(max_length=64)
+    status = CharField(max_length=16)
+    channel = CharField(max_length=256, null=True)
+
+    class Meta:
+        table_name = "chato_users"
+
+    @unique
+    class Role(enum.Enum):
+        SUPER = "superman"
+        OWNER = "owner"
+        MEMBER = "member"
+
+    @unique
+    class Status(enum.Enum):
+        PENDING = "pending"
+        NORMAL = "normal"
+        DISABLED = "disabled"
+
+
+class ChatoDomain(BaseModel):
+    name = CharField(max_length=256)
+    slug = CharField(max_length=64, index=True)
+    org = ForeignKeyField(ChatoOrg, backref="org_id")
+    file_count = IntegerField(default=0)
+    system_prompt = TextField(default="")
+    welcome = TextField(default="")
+    creator = ForeignKeyField(ChatoUser, backref="created_id", null=True)
+    updater = ForeignKeyField(ChatoUser, backref="updater_id", null=True)
+
+    avatar = TextField(default="")
+    avatar_show = IntegerField(default=1)
+    name_show = IntegerField(default=1)
+    message_style = TextField(default="")
+    suspend_style = TextField(default="")
+    whitelist_sites = TextField(default="")
+
+    lang = TextField(default="auto")
+    reply_tone = TextField(default="")
+    reply_length = IntegerField(default=0)
+    temperature = IntegerField(default=1)
+
+    customer_limit = CharField(max_length=1024)
+    shortcuts = TextField(default="")
+    desc = CharField(max_length=256)
+    desc_show = IntegerField(default=1)
+    # 1 文档机器人 2 人设机器人
+    type = IntegerField(default=1)
+    deleted = DateTimeField(null=True)
+
+    class Meta:
+        table_name = "chato_domains"
+
+    @classmethod
+    def select(cls, *selection):
+        print('*selection')
+        return super().select(*selection).where(cls.deleted.is_null())
+
+
+class ChatoDomainTemplate(BaseModel):
+    name = CharField(max_length=256)
+    system_prompt = TextField(default="")
+    welcome = TextField(default="")
+
+    avatar = TextField(default="")
+    avatar_show = IntegerField(default=1)
+    name_show = IntegerField(default=1)
+    message_style = TextField(default="")
+    suspend_style = TextField(default="")
+
+    lang = TextField(default="auto")
+    reply_tone = TextField(default="")
+    reply_length = IntegerField(default=0)
+    temperature = IntegerField(default=1)
+
+    shortcuts = TextField(default="")
+    desc = CharField(max_length=256)
+    # 1 文档机器人 2 人设机器人
+    type = IntegerField(default=1)
+
+    class Meta:
+        table_name = "chato_domain_templates"
+
+
+class ChatoFile(BaseModel):
+    type = CharField(max_length=64, index=True)
+    title = CharField(max_length=256)
+    domain = ForeignKeyField(ChatoDomain, backref="domain_id")
+    status = CharField(max_length=16)
+    raw_size = IntegerField(default=0)
+    raw_file_url = CharField(max_length=2048, null=True)
+    raw_file_hash = CharField(max_length=256, null=True)
+    content_html = TextField(null=True)
+    processed_file_url = CharField(max_length=2048, null=True)
+    creator = ForeignKeyField(ChatoUser, backref="created_id", null=True)
+    updater = ForeignKeyField(ChatoUser, backref="created_id", null=True)
+    business_type = CharField(max_length=20, null=True)
+
+    class Meta:
+        table_name = "chato_files"
+
+    @unique
+    class Type(enum.Enum):
+        EDITOR = "editor"
+        PDF = "pdf"
+        DOC = "doc"
+        DOCX = "docx"
+        MD = "md"
+
+    @unique
+    class Status(enum.Enum):
+        PENDING = "pending"
+        PARSING = "parsing"
+        LEARNING = "learning"
+        LEARNED = "learned"
+        ERROR = "error"
+        DELETED = "deleted"
+
+    @unique
+    class BusinessType(enum.Enum):
+        DOCUMENT = "document"
+        QA = "qa"
+
+
+class ChatoQuestion(BaseModel):
+    type = CharField(max_length=64, index=True)
+    sender = ForeignKeyField(ChatoUser, backref="sender_id", null=True)
+    sender_uid = CharField(max_length=100, default="", index=True)
+    org = ForeignKeyField(ChatoOrg, backref="org_id")
+    domain = ForeignKeyField(ChatoDomain, backref="domain_id")
+    question = TextField(default="")
+    question_engineered = TextField(null=True)
+    answer = TextField(default="")
+    answer_file_url = CharField(max_length=2048, null=True)
+    ref_file_ids = CharField(null=True)
+    is_question_blocked = BooleanField(default=False, index=True)
+    is_answer_blocked = BooleanField(default=False, index=True)
+    question_deleted = BooleanField(default=False, index=True)
+    answer_deleted = BooleanField(default=False, index=True)
+    status = CharField(max_length=16)
+    error_reason = CharField(max_length=256, null=True)
+    time_to_answer_start = BigIntegerField(default=0)
+    time_to_answer_end = BigIntegerField(default=0)
+    like_count = IntegerField(default=0)
+    dislike_count = IntegerField(default=0)
+    group_name = CharField(max_length=256, null=True)
+    source = CharField(max_length=128, null=True)
+    robot = CharField(max_length=256, null=True)
+    service_provider_channel = CharField(max_length=128, null=True)
+    owner_score = IntegerField(null=True)
+    super_score = IntegerField(null=True)
+    summary = TextField(default="")
+    ref_source = TextField(default="")
+    evaluation = CharField(max_length=30, null=True)
+    session_id = CharField(max_length=100)
+
+    class Meta:
+        table_name = "chato_questions"
+
+    @unique
+    class Type(enum.Enum):
+        TEXT = "text"
+        IMAGE = "image"
+        VIDEO = "video"
+        FORBID = "forbid"
+
+    @unique
+    class Status(enum.Enum):
+        PENDING = "pending"
+        DONE = "done"
+        BLOCKER = "blocked"
+        ERROR = "error"
+        DELETED = "deleted"
+
+
+===/model/chato.py===
+
+
+===/model/Developer.py===
+
+import secrets
+
+from peewee import CharField, IntegerField, BooleanField
+
+from model.base import BaseModel, db
+
+
+class Developer(BaseModel):
+    api_key = CharField(max_length=256, default="", index=True)
+    capacity = IntegerField(default=10000)
+    name = CharField(max_length=256, default="")
+    only_gpt3 = BooleanField(default=False)
+    skip_engineering = BooleanField(default=False)
+    skip_auditing = BooleanField(default=False)
+    skip_ad = BooleanField(default=False)
+
+    @staticmethod
+    def generate(name=None):
+        dev = Developer()
+        dev.api_key = f"{secrets.token_urlsafe(6)}".upper()
+        dev.capacity = 10000
+        dev.name = name or "Unknown"
+        dev.save()
+        return dev
+
+
+def main():
+    # db.create_tables([Developer])
+    count = 100
+    for i in range(count):
+        print(Developer.generate(f"0307丸子{i+1}/{count}"))
+    # print(Developer.generate())
+    # dev = Developer.get(id=67)
+    # print(vars(dev))
+
+
+if __name__ == "__main__":
+    main()
+
+
+===/model/Developer.py===
+
+
+===/model/base.py===
+
+import datetime
+import enum
+import logging
+from enum import unique
+
+from peewee import *
+from playhouse.pool import PooledMySQLDatabase
+from playhouse.shortcuts import ReconnectMixin
+
+import config
+
+
+class RetryMySQLDatabase(ReconnectMixin, PooledMySQLDatabase):
+    _instance = None
+
+    @staticmethod
+    def get_db_instance():
+        if not RetryMySQLDatabase._instance:
+            RetryMySQLDatabase._instance = RetryMySQLDatabase(
+                database=config.MYSQL_DB,
+                user=config.MYSQL_USER,
+                password=config.MYSQL_PASSWORD,
+                host=config.MYSQL_HOST,
+                port=config.MYSQL_PORT,
+                charset="utf8mb4",
+                max_connections=1024,
+                autoconnect=True,
+                autorollback=True,
+                stale_timeout=300,
+                timeout=310,
+            )
+        return RetryMySQLDatabase._instance
+
+
+db = RetryMySQLDatabase.get_db_instance()
+
+_logger = logging.getLogger("peewee")
+# 注释掉了下面这行，主要是解决由Logger.py引起的打印两遍peewee的问题
+# _logger.addHandler(logging.StreamHandler())
+_logger.setLevel(logging.DEBUG)
+
+
+class BaseModel(Model):
+    class Meta:
+        database = db
+
+    created = DateTimeField(null=False, constraints=[SQL("DEFAULT CURRENT_TIMESTAMP")])
+    modified = DateTimeField(
+        null=False,
+        constraints=[SQL("DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")],
+    )
+
+    def save(self, *args, **kwargs):
+        self.modified = datetime.datetime.now()
+        super().save(*args, **kwargs)
+
+
+class Question(BaseModel):
+    question = TextField()
+    question_engineered = TextField(null=True)
+    answer = TextField()
+    group_name = CharField(max_length=256, null=True)
+    gid = CharField(max_length=64, null=True)
+    sender = CharField(max_length=256, null=True)
+    sender_id = CharField(max_length=64, null=True)
+    like_count = IntegerField(default=0)
+    dislike_count = IntegerField(default=0)
+    robot = CharField(max_length=256, null=True)
+    source = CharField(max_length=128, null=True)
+    request_time = BigIntegerField(default=0)
+    response_time = BigIntegerField(default=0)
+    error_reason = CharField(max_length=256, null=True)
+    response_type = CharField(max_length=128, null=True)
+    response_result = CharField(max_length=256, null=True)
+    service_provider_channel = CharField(max_length=128, null=True)
+    session_id = CharField(max_length=128, null=True)
+    prompt_tokens = IntegerField(null=True)
+    completion_tokens = IntegerField(null=True)
+
+    class Meta:
+        table_name = "questions"
+
+    @staticmethod
+    def _search_query(group=None, sender=None, sort="created"):
+        query = True
+        if group is not None and group != "" and group != "all":
+            query = query & (Question.group_name == group)
+        else:
+            paid_group_names = [g.name for g in WhiteGroup.paid_groups()]
+            query = query & (
+                    Question.group_name.is_null(True)
+                    | (
+                            Question.group_name.not_in(paid_group_names)
+                            & ~Question.group_name.startswith("sk")
+                    )
+            )
+        if sender is not None and sender != "" and sender != "all":
+            query = query & (Question.sender == sender)
+        if sort != "created":
+            query = query & (
+                    ((Question.like_count > 0) | (Question.dislike_count > 0))
+                    & (
+                            Question.created
+                            > (datetime.datetime.now() - datetime.timedelta(days=1))
+                    )
+            )
+        return query
+
+    @staticmethod
+    def search(
+            page_index=0, count_per_page=100, group=None, sender=None, sort="-created"
+    ):
+        query = Question.select().where(
+            Question._search_query(group=group, sender=sender, sort=sort)
+        )
+        if sort == "-created":
+            query = query.order_by(Question.created.desc())
+        elif sort == "created":
+            query = query.order_by(Question.created)
+        else:
+            query = query.order_by(
+                Question.like_count.desc(),
+                Question.dislike_count,
+                Question.created.desc(),
+            )
+        return query.paginate(page_index + 1, count_per_page)
+
+    @staticmethod
+    def count(group=None, sender=None, sort="created"):
+        query = Question.select().where(
+            Question._search_query(group=group, sender=sender, sort=sort)
+        )
+        return query.count()
+
+    def update_like_count(self):
+        self.like_count = (
+            QuestionVote.select()
+            .where(QuestionVote.question == self, QuestionVote.vote_type == "like")
+            .count()
+        )
+        self.dislike_count = (
+            QuestionVote.select()
+            .where(QuestionVote.question == self, QuestionVote.vote_type == "dislike")
+            .count()
+        )
+        self.save()
+
+
+class BlockedQuestion(Question):
+    forbid_platform = CharField(max_length=256, null=True)
+    forbid_label = CharField(max_length=256, null=True)
+    forbid_reason = CharField(max_length=256, null=True)
+    forbid_keywords = CharField(max_length=256, null=True)
+
+    class Meta:
+        table_name = "questions_blocked"
+
+
+class ChatLog(BaseModel):
+    content = TextField()
+    content_type = CharField(max_length=256, null=True)
+    group_name = CharField(max_length=256, null=True)
+    unified_user_id = IntegerField(default=None, null=True)
+    owner_log_id = IntegerField(default=None, null=True)
+
+    class Meta:
+        table_name = "chat_log"
+
+    @staticmethod
+    def search(page_index=0, count_per_page=30, unified_user_id=None, sort="-created"):
+        # 构建查询参数
+        query = ChatLog.select().where(ChatLog.unified_user_id == unified_user_id)
+        if sort == "-created":
+            query = query.order_by(ChatLog.created.desc())
+        elif sort == "created":
+            query = query.order_by(ChatLog.created)
+        else:
+            query = query.order_by(ChatLog.created.desc())
+        return query.paginate(page_index + 1, count_per_page)
+
+    @staticmethod
+    def count(unified_user_id=None):
+        query = ChatLog.select().where(ChatLog.unified_user_id == unified_user_id)
+        return query.count()
+
+
+class QuestionVote(BaseModel):
+    VOTE_TYPE_LIKE = "like"
+    VOTE_TYPE_DISLIKE = "dislike"
+
+    question = ForeignKeyField(Question, backref="votes")
+    vote_type = CharField(max_length=16)
+    voter = CharField(max_length=256)
+
+    class Meta:
+        table_name = "question_votes"
+
+
+class WhiteGroup(BaseModel):
+    name = CharField(max_length=256, default="", index=True)
+    capacity = IntegerField(default=30)
+    paid = BooleanField(default=False, index=True)
+    gid = CharField(max_length=64, null=True, index=True)
+
+    class Meta:
+        table_name = "white_groups"
+
+    @staticmethod
+    def paid_groups():
+        return WhiteGroup().select().where(WhiteGroup.paid == True)
+
+
+class Worker(BaseModel):
+    is_busy = BooleanField(default=False)
+    endpoint = CharField(max_length=1024, default="")
+
+
+class ChatgptToken(BaseModel):
+    is_busy = BooleanField(default=False)
+    token = CharField(max_length=4096, default="")
+    email = CharField(max_length=64, default="", null=True)
+
+    class Meta:
+        table_name = "chatgpt_token"
+
+    @classmethod
+    def get_usable_token(cls):
+        chatgpt_tokens = (
+            cls()
+            .select()
+            .where(
+                (cls.is_busy == 0)
+                & (
+                        cls.modified
+                        < (datetime.datetime.now() - datetime.timedelta(minutes=3))
+                )
+            )
+            .execute()
+        )
+        return [ct for ct in chatgpt_tokens]
+
+
+class OpenAIChannel(BaseModel):
+    appid = CharField(max_length=64, default="", index=True)
+    secret = CharField(max_length=64, default="")
+    openai_api_key = CharField(max_length=128, null=True, index=True)
+
+    class Meta:
+        table_name = "openai_channel"
+
+
+class ServiceProvider(BaseModel):
+    channel = CharField(max_length=64, default="")
+    app_secret = CharField(max_length=256, default="")
+    func_type = CharField(max_length=256, default="")
+    api_url = CharField(max_length=512, default="")
+    api_ext = CharField(max_length=512, default="")
+    quota = SmallIntegerField(default=100)
+    is_open = SmallIntegerField(default=1)
+
+    class Meta:
+        table_name = "service_provider"
+
+
+class User(BaseModel):
+    openid = CharField(max_length=32, index=True)
+    unionid = CharField(max_length=32, null=True, index=True)
+    nickname = CharField(max_length=256, index=True)
+    credit = SmallIntegerField(default=3)
+    quota = SmallIntegerField(default=300)
+    unified_user_id = IntegerField(default=0)
+
+
+class Group(BaseModel):
+    name = CharField(max_length=256, default="", index=True)
+    capacity = IntegerField(default=30)
+    paid = BooleanField(default=False, index=True)
+    gid = CharField(max_length=64, null=True, index=True)
+    creator = ForeignKeyField(User, backref="user_id")
+    openai_api_key = CharField(max_length=256, null=True)
+    only_gpt3 = BooleanField(default=False)
+    status = IntegerField(default=1)
+    robot_id = IntegerField(default=0)
+    owner_id = IntegerField(default=0)
+    owner_wxid = CharField(max_length=256, null=True)
+    token = CharField(max_length=256, null=True)
+    expire_time = DateTimeField(null=True)
+    smartbot = CharField(max_length=64, null=True, default='')
+
+    @staticmethod
+    def paid_groups():
+        return Group().select().where(Group.paid == True)
+
+    def merged_document_names(self):
+        uid = self.creator.id if self.creator else None
+        return Persona.merged_document_names(uid=uid, gid=self.id)
+
+
+class GroupMember(BaseModel):
+    wxid = CharField(max_length=64, default="", index=True)
+    displayed_id = CharField(max_length=64, default="", index=True)
+    nickname = CharField(max_length=64, default="", index=True)
+    gender = BooleanField(default=True, index=True)
+    group = ForeignKeyField(Group, backref="group_id")
+
+
+class Token(BaseModel):
+    uuid = CharField(max_length=64)
+    owner = ForeignKeyField(User, backref="owner_id", null=True)
+    used = BooleanField(default=False, index=True)
+    days = IntegerField(null=True, default=None)
+
+
+class Storage(BaseModel):
+    key = CharField(max_length=256)
+    value = CharField(max_length=256)
+
+
+class Robot(BaseModel):
+    name = CharField(max_length=256)
+    wxid = CharField(max_length=256)
+
+
+# 角色背景，目前是挂载到 group 上，一个group只有一个
+class RoleBackground(BaseModel):
+    name = CharField(max_length=256)
+    remark = CharField(max_length=256)
+    background = TextField()
+    group_id = IntegerField(null=True, default=None)
+
+    class Meta:
+        table_name = "role_background"
+
+
+class Domain(BaseModel):
+    name = CharField(max_length=256, default="", index=True)
+    file_count = IntegerField(null=True, default=None)
+    creator = ForeignKeyField(User, backref="created_by", null=True)
+    updater = ForeignKeyField(User, backref="created_by", null=True)
+
+    def get_document_names(self):
+        print("get_document_names by id:", self.id)
+        return [
+            d.name
+            for d in DomainDocument.select().where(DomainDocument.domain == self.id)
+        ]
+
+
+class DomainDocument(BaseModel):
+    name = CharField(max_length=256)
+    domain = ForeignKeyField(Domain, backref="domain_id")
+
+
+class Persona(BaseModel):
+    name = CharField(max_length=256, default="")
+    user = ForeignKeyField(User, backref="user_id")
+    group = ForeignKeyField(Group, backref="group_id", null=True)
+    domain = ForeignKeyField(Domain, backref="domain_id")
+
+    @staticmethod
+    def merged_document_names(uid, gid):
+        domains = [
+            doc_name
+            for p in Persona.select().where(
+                (Persona.group == gid) | (Persona.user == uid)
+            )
+            for doc_name in p.domain.get_document_names()
+        ]
+        domains = list(dict.fromkeys(domains))
+        return domains
+
+
+class PersonaWechat(BaseModel):
+    name = CharField(max_length=256, default="", index=True)
+    qrcode = CharField(max_length=1024, default="", index=True)
+
+
+class UserPersona(BaseModel):
+    user = ForeignKeyField(User, backref="user_id")
+    persona_name = CharField(max_length=256, default="", index=True)
+
+
+class File(BaseModel):
+    title = CharField(max_length=256)
+    type = CharField(max_length=64)
+    url = CharField(max_length=2048, null=True)
+    content_html = TextField(null=True)
+    domain = ForeignKeyField(Domain, backref="domain_id")
+    status = CharField(max_length=16)
+    creator = ForeignKeyField(User, backref="created_by", null=True)
+    updater = ForeignKeyField(User, backref="created_by", null=True)
+
+    @unique
+    class Status(enum.Enum):
+        PENDING = "pending"
+        PARSING = "parsing"
+        LEARNING = "learning"
+        LEARNED = "learned"
+        ERROR = "error"
+        DELETED = "deleted"
+
+
+class ChatoOrg(BaseModel):
+    name = CharField(max_length=256)
+    short_name = CharField(max_length=256, null=True)
+    slug = CharField(max_length=256, null=True)
+    avatar = CharField(max_length=256, null=True)
+    qywx_corp_id = CharField(max_length=256, null=True)
+
+    class Meta:
+        table_name = "chato_orgs"
+
+
+class ChatoUser(BaseModel):
+    nickname = CharField(max_length=256)
+    avatar = CharField(max_length=256, null=True)
+    mobile = CharField(max_length=20, index=True)
+    wx_union_id = CharField(max_length=256, null=True)
+    qywx_union_id = CharField(max_length=256, null=True)
+    qywx_corp_id = CharField(max_length=256, null=True)
+    org = ForeignKeyField(ChatoOrg, backref="org_id", index=True, null=True)
+    role = CharField(max_length=64)
+    status = CharField(max_length=16)
+
+    class Meta:
+        table_name = "chato_users"
+
+    @unique
+    class Role(enum.Enum):
+        SUPER = "superman"
+        OWNER = "owner"
+        MEMBER = "member"
+
+    @unique
+    class Status(enum.Enum):
+        PENDING = "pending"
+        NORMAL = "normal"
+        DISABLED = "disabled"
+
+
+class ChatoDomain(BaseModel):
+    name = CharField(max_length=256)
+    org = ForeignKeyField(ChatoOrg, backref="org_id")
+    file_count = IntegerField(default=0)
+    creator = ForeignKeyField(ChatoUser, backref="created_id", null=True)
+    updater = ForeignKeyField(ChatoUser, backref="updater_id", null=True)
+
+    class Meta:
+        table_name = "chato_domains"
+
+
+class ChatoFile(BaseModel):
+    type = CharField(max_length=64, index=True)
+    title = CharField(max_length=256)
+    domain = ForeignKeyField(ChatoDomain, backref="domain_id")
+    status = CharField(max_length=16)
+    raw_size = IntegerField(default=0)
+    raw_file_url = CharField(max_length=2048, null=True)
+    raw_file_hash = CharField(max_length=256, null=True)
+    content_html = TextField(null=True)
+    processed_file_url = CharField(max_length=2048, null=True)
+    creator = ForeignKeyField(ChatoUser, backref="created_id", null=True)
+    updater = ForeignKeyField(ChatoUser, backref="created_id", null=True)
+    business_type = CharField(max_length=50, null=True)
+    source_question_id = IntegerField(default=0)
+
+    class Meta:
+        table_name = "chato_files"
+
+    @unique
+    class Type(enum.Enum):
+        EDITOR = "editor"
+        PDF = "pdf"
+        DOC = "doc"
+        DOCX = "docx"
+        MD = "md"
+        TEXT = "text"
+
+    @unique
+    class Status(enum.Enum):
+        PENDING = "pending"
+        PARSING = "parsing"
+        LEARNING = "learning"
+        LEARNED = "learned"
+        ERROR = "error"
+        DELETED = "deleted"
+
+
+class ChatoQuestion(BaseModel):
+    type = CharField(max_length=64, index=True)
+    sender = ForeignKeyField(ChatoUser, backref="sender_id")
+    org = ForeignKeyField(ChatoOrg, backref="org_id")
+    question = TextField()
+    question_engineered = TextField(null=True)
+    answer = TextField(null=True)
+    answer_file_url = CharField(max_length=2048, null=True)
+    ref_file_ids = CharField(null=True)
+    is_question_blocked = BooleanField(default=False, index=True)
+    is_answer_blocked = BooleanField(default=False, index=True)
+    status = CharField(max_length=16)
+    error_reason = CharField(max_length=256, null=True)
+    time_to_answer_start = BigIntegerField(default=0)
+    time_to_answer_end = BigIntegerField(default=0)
+    like_count = IntegerField(default=0)
+    dislike_count = IntegerField(default=0)
+    group_name = CharField(max_length=256, null=True)
+    source = CharField(max_length=128, null=True)
+    robot = CharField(max_length=256, null=True)
+    service_provider_channel = CharField(max_length=128, null=True)
+
+    class Meta:
+        table_name = "chato_questions"
+
+    @unique
+    class Type(enum.Enum):
+        TEXT = "text"
+        IMAGE = "image"
+        VIDEO = "video"
+        FORBID = "forbid"
+
+    @unique
+    class Status(enum.Enum):
+        PENDING = "pending"
+        DONE = "done"
+        BLOCKER = "blocked"
+        ERROR = "error"
+        DELETED = "deleted"
+
+
+class TraceType(str, enum.Enum):
+    before_request = "before_request"
+
+
+class ThirdLog(BaseModel):
+    type = CharField(max_length=32)
+    endpoint = CharField(max_length=1024)
+    params = CharField(max_length=4096, null=True)
+    response = CharField(max_length=4096, null=True)
+    status = CharField(max_length=16, default="REQUESTING")
+
+
+class TraceLog(BaseModel):
+    trace_id = CharField(max_length=64)
+    source = CharField(max_length=64, default="")
+    type = CharField(max_length=64, default="")
+    extra = CharField(max_length=4096, null=True)
+
+    class Meta:
+        table_name = "trace_log"
+
+    def write_to_es(self, **query):
+        print("to write_to_es")
+
+    @classmethod
+    def create(cls, **query):
+        print("to create")
+
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
+
+
+===/model/base.py===
+

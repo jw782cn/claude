@@ -6,9 +6,11 @@
   // Store for chat messages
   let messages = [];
   let model = "Model";
+  let download;
   let sessionNamesandIds = {};
   let currentSessionId = "";
-  let inputRef;
+  let uploadfile;
+  let uploaddir;
   let URL = "http://localhost:3000";
 
   let messagesContainer;
@@ -54,7 +56,7 @@
     const source = new EventSource(URL + "/api/stream-updates");
 
     source.addEventListener("open", (event) => {
-      // console.log('Opened stream:', event);
+      console.log('Opened stream:', event);
       // check if event has data
       if (event.data) {
         const data = JSON.parse(event.data);
@@ -72,6 +74,7 @@
       // console.log('Update received:', event.data);
       const reply = JSON.parse(event.data);
       messages[messages.length - 1].content = reply.result;
+      // console.log(reply.result);
       // 201, 202
       if (reply.status == 202) {
         // close connection
@@ -109,7 +112,7 @@
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
-
+    console.log("??")
     await receiveMessage();
   }
 
@@ -157,6 +160,11 @@
     }
   }
 
+  async function handleDirUpload(event) {
+    
+  }
+
+
   const scrollToBottom = async (node) => {
     node.scroll({ top: node.scrollHeight, behavior: "smooth" });
   };
@@ -191,9 +199,22 @@
       <button class="button" on:click={() => sendMessage(newMessage)} disabled={typing}
         >Send</button
       >
-      <button class="button"  on:click={() => inputRef.click()} disabled={typing} >
+      <button class="button"  on:click={() => uploadfile.click()} disabled={typing} >
         Upload
-        <input type="file" bind:this={inputRef} class="input-file" on:change={handleFileUpload} />
+        <input type="file" bind:this={uploadfile} class="input-file" on:change={handleFileUpload} />
+      </button>
+      <button class="button"  on:click={() => uploaddir.click()} disabled={typing} >
+        FileDir
+        <input type="file" bind:this={uploaddir} class="input-file" on:change={handleDirUpload} />
+      </button>
+      <button class="button"  on:click={() => download.click()} disabled={typing} >
+        Download
+        <a
+          bind:this={download}
+          href="data:text/json;charset=utf-8,{encodeURIComponent(JSON.stringify(messages))}"
+          download="data.json"
+        >
+        </a>
       </button>
     </div>
   </div>
@@ -203,7 +224,7 @@
   .chat-container {
     display: flex;
     flex-direction: column;
-    height: 93%;
+    height: 600px;
     width: 98%;
     border: 1px solid #ccc;
     background-color: #f2f2f2;

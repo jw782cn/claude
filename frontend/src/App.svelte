@@ -2,7 +2,6 @@
   import Claude from "./Claude.svelte";
   import { themeColor } from "./store.ts";
 
-	export let name;
 </script>
 
 <div class="claude-wrapper">

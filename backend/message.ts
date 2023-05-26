@@ -45,6 +45,7 @@ class AnthropicMessage extends EventEmitter {
     // assemble prompt
     const messages = await sessionHandler.findMessages();
     const prompt = await this.formatPrompt(messages);
+    console.log("prompt", prompt.length);
 
     // Send to anthropic
     const stream = client.completeStream(
